@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git)",
+      "Bash(sudo chown -R 501:20 \"/Users/kaiyuuya/.npm\")",
+      "Bash(npx --cache /tmp/npm-cache create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git --yes)"
+    ]
+  }
+}
