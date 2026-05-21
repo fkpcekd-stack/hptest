@@ -4,6 +4,7 @@ import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollRevealInit from "@/components/ScrollRevealInit";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -57,6 +58,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${inter.variable} ${notoSansJP.variable}`}>
       <body className="min-h-screen flex flex-col bg-white text-[#0F172A] font-sans antialiased">
+        <ScrollRevealInit />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

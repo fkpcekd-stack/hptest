@@ -2,34 +2,36 @@ import Link from "next/link";
 
 export default function CTASection() {
   return (
-    <section className="py-32 bg-[#0F172A]">
-      <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <p className="text-[#4AB8D8] text-sm font-semibold uppercase tracking-widest mb-6">
-          Contact
-        </p>
-        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
-          まずはお気軽に<br />ご相談ください。
-        </h2>
-        <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-          プロジェクトのご相談から、技術的なご質問まで、<br className="hidden sm:block" />
-          2営業日以内にご返答いたします。
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#4AB8D8] text-white font-semibold rounded-lg hover:bg-[#3aa5c4] transition-colors text-sm"
-          >
-            お問い合わせはこちら
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
-          <Link
-            href="/services"
-            className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white font-semibold rounded-lg hover:border-white/50 transition-colors text-sm"
-          >
-            サービスを見る
-          </Link>
+    <section className="bg-[#4AB8D8] py-32">
+      <div className="px-8 lg:px-16">
+        <div className="max-w-4xl">
+          <p className="text-white/60 text-xs tracking-[0.3em] uppercase mb-6">Contact</p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+            まずはお気軽に
+            <br />
+            ご相談ください。
+          </h2>
+          <p className="text-white/70 text-base leading-relaxed mb-12 max-w-lg">
+            プロジェクトのご相談から、技術的なご質問まで、
+            2営業日以内にご返答いたします。
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0d0d0d] font-semibold text-sm hover:bg-[#0d0d0d] hover:text-white transition-colors duration-300 group"
+            >
+              お問い合わせはこちら
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-3 px-8 py-4 border border-white/40 text-white font-semibold text-sm hover:border-white hover:bg-white/10 transition-all duration-300"
+            >
+              サービスを見る
+            </Link>
+          </div>
         </div>
       </div>
     </section>

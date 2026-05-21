@@ -5,10 +5,12 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
+  { href: "/", label: "TOP" },
   { href: "/services", label: "サービス" },
   { href: "/works", label: "実績" },
   { href: "/news", label: "お知らせ" },
   { href: "/about", label: "会社概要" },
+  { href: "/contact", label: "CONTACT" },
 ];
 
 export default function Header() {
@@ -27,97 +29,113 @@ export default function Header() {
     setMenuOpen(false);
   }, [pathname]);
 
-  const transparent = isTop && !scrolled;
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
+  // ヒーローが白背景のため、ロゴは常にカラー表示
+  // menuOpen時のみダークオーバーレイに合わせて白に切り替え
+  const transparent = isTop && !scrolled && !menuOpen;
+  const isDark = menuOpen;
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        transparent ? "bg-transparent" : "bg-white shadow-sm"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between py-4">
-          <Link href="/" className="flex-shrink-0">
-            <Image
-              src="/logo.png"
-              alt="dkInc."
-              width={320}
-              height={80}
-              className={`h-[80px] w-auto object-contain transition-all duration-300 ${
-                transparent ? "brightness-0 invert" : ""
-              }`}
-              priority
-            />
-          </Link>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          menuOpen
+            ? "bg-[#0d0d0d]"
+            : scrolled
+            ? "bg-white shadow-[0_1px_0_rgba(0,0,0,0.06)]"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="px-8 lg:px-16">
+          <div className="flex items-center justify-between h-20">
+            <Link href="/" className="flex-shrink-0">
+              <Image
+                src="/logo.png"
+                alt="dkInc."
+                width={160}
+                height={40}
+                className={`h-9 w-auto transition-all duration-500 ${
+                  isDark ? "brightness-0 invert" : ""
+                }`}
+                priority
+              />
+            </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  transparent
-                    ? "text-white/80 hover:text-white"
-                    : pathname === link.href
-                    ? "text-[#1B2B5E]"
-                    : "text-gray-500 hover:text-gray-900"
+            <button
+              className="flex items-center gap-3 cursor-pointer"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? "閉じる" : "メニューを開く"}
+            >
+              <span
+                className={`text-xs font-medium tracking-[0.2em] transition-colors duration-500 ${
+                  isDark ? "text-white" : "text-[#0d0d0d]"
                 }`}
               >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              className={`ml-2 px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-200 ${
-                transparent
-                  ? "border border-white/50 text-white hover:bg-white hover:text-[#1B2B5E]"
-                  : "bg-[#1B2B5E] text-white hover:bg-[#2563EB]"
-              }`}
-            >
-              お問い合わせ
-            </Link>
-          </nav>
+                {menuOpen ? "CLOSE" : "MENU"}
+              </span>
+              <div className="flex flex-col gap-[5px] w-6">
+                <span
+                  className={`block h-px transition-all duration-300 origin-center ${
+                    isDark ? "bg-white" : "bg-[#0d0d0d]"
+                  } ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`}
+                />
+                <span
+                  className={`block h-px transition-all duration-300 ${
+                    isDark ? "bg-white" : "bg-[#0d0d0d]"
+                  } ${menuOpen ? "opacity-0 w-0" : "w-full"}`}
+                />
+                <span
+                  className={`block h-px transition-all duration-300 origin-center ${
+                    isDark ? "bg-white" : "bg-[#0d0d0d]"
+                  } ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`}
+                />
+              </div>
+            </button>
+          </div>
+        </div>
+      </header>
 
-          <button
-            className="md:hidden flex flex-col gap-1.5 p-2"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="メニュー"
-          >
-            {[0, 1, 2].map((i) => (
-              <span
-                key={i}
-                className={`block w-6 h-0.5 transition-all duration-300 ${
-                  transparent ? "bg-white" : "bg-gray-700"
-                } ${i === 0 && menuOpen ? "rotate-45 translate-y-2" : ""} ${
-                  i === 1 && menuOpen ? "opacity-0" : ""
-                } ${i === 2 && menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-              />
-            ))}
-          </button>
+      {/* Full-screen overlay navigation */}
+      <div
+        className={`fixed inset-0 z-40 bg-[#0d0d0d] flex flex-col justify-center transition-all duration-500 ${
+          menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <nav className="px-8 lg:px-24 pt-20">
+          {navLinks.map((link, i) => (
+            <div key={link.href} className="border-b border-white/10 overflow-hidden">
+              <Link
+                href={link.href}
+                className={`flex items-center justify-between py-5 text-2xl sm:text-3xl lg:text-4xl font-bold text-white/30 hover:text-white transition-all duration-300 group ${
+                  menuOpen ? "nav-item-enter" : ""
+                }`}
+                style={{ animationDelay: menuOpen ? `${i * 60 + 100}ms` : "0ms" }}
+              >
+                <span className="group-hover:translate-x-3 transition-transform duration-300">
+                  {link.label}
+                </span>
+                <svg
+                  className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          ))}
+        </nav>
+        <div className="px-8 lg:px-24 mt-12">
+          <p className="text-white/20 text-xs tracking-widest">© 2024 株式会社DK</p>
         </div>
       </div>
-
-      {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100">
-          <nav className="px-6 py-4 flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#1B2B5E] hover:bg-gray-50 rounded-lg"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              className="mt-2 px-4 py-3 bg-[#1B2B5E] text-white text-sm font-semibold rounded-lg text-center"
-            >
-              お問い合わせ
-            </Link>
-          </nav>
-        </div>
-      )}
-    </header>
+    </>
   );
 }
