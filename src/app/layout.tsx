@@ -5,6 +5,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollRevealInit from "@/components/ScrollRevealInit";
+import { AnimationProvider } from "@/contexts/AnimationContext";
+import AnimationSwitcher from "@/components/AnimationSwitcher";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,24 +46,20 @@ export const metadata: Metadata = {
     description:
       "株式会社DK（dkInc.）は、デジタル広告・SEOメディア・コンテンツ制作・有料職業紹介を通じて、企業の集客・ブランディング・売上拡大を支援します。",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ja" className={`${inter.variable} ${notoSansJP.variable}`}>
       <body className="min-h-screen flex flex-col bg-white text-[#0F172A] font-sans antialiased">
-        <ScrollRevealInit />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <AnimationProvider>
+          <ScrollRevealInit />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <AnimationSwitcher />
+        </AnimationProvider>
       </body>
     </html>
   );

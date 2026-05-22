@@ -34,6 +34,61 @@ body {
 
 /* ─── SVG illustration animations ─── */
 
+/* ── Spark keyframes ── */
+@keyframes svgSparkCore {
+  0%, 58%, 100% { transform: scale(1); }
+  7%   { transform: scale(2.6); }
+  17%  { transform: scale(1.1); }
+}
+@keyframes svgSparkGlow {
+  0%, 55%, 100% { opacity: 0.06; }
+  7%   { opacity: 0.45; }
+  16%  { opacity: 0.12; }
+}
+@keyframes svgSparkNode {
+  0%, 60%, 100% { transform: scale(1); }
+  9%   { transform: scale(3.2); }
+  20%  { transform: scale(1); }
+}
+@keyframes svgSparkFlash {
+  0%, 55%, 100% { opacity: 0.15; }
+  5%   { opacity: 1; }
+  13%  { opacity: 0.45; }
+}
+@keyframes svgSparkShake {
+  0%, 45%, 100% { transform: translate(0, 0) rotate(0deg); }
+  5%   { transform: translate(-5px, -3px) rotate(-3deg); }
+  9%   { transform: translate(4px, 2px)  rotate(2deg); }
+  13%  { transform: translate(-2px, 1px) rotate(-1deg); }
+  17%  { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* ── Blueprint keyframes ── */
+@keyframes svgBpDraw {
+  0%, 3%           { stroke-dashoffset: 1100; opacity: 0; }
+  6%               { opacity: 1; }
+  48%              { stroke-dashoffset: 0;    opacity: 1; }
+  72%              { stroke-dashoffset: 0;    opacity: 0.85; }
+  88%, 100%        { stroke-dashoffset: 1100; opacity: 0; }
+}
+@keyframes svgBpDrawLine {
+  0%, 3%           { stroke-dashoffset: 320;  opacity: 0; }
+  6%               { opacity: 1; }
+  48%              { stroke-dashoffset: 0;    opacity: 1; }
+  72%              { stroke-dashoffset: 0;    opacity: 0.85; }
+  88%, 100%        { stroke-dashoffset: 320;  opacity: 0; }
+}
+@keyframes svgBpNode {
+  0%, 18%, 78%, 100% { transform: scale(0); opacity: 0; }
+  24%, 72%            { transform: scale(1); opacity: 1; }
+}
+@keyframes svgBpAppear {
+  0%, 14%, 75%, 100% { opacity: 0; }
+  20%, 70%            { opacity: 1; }
+}
+
+
+
 /* transform-box helper for element-relative transforms */
 .svg-anim {
   transform-box: fill-box;
@@ -82,6 +137,14 @@ body {
 @keyframes svgBlink {
   0%, 100% { opacity: 0.35; }
   50%      { opacity: 0.7; }
+}
+@keyframes svgFacet {
+  0%, 100% { opacity: 0.78; }
+  50%      { opacity: 0.97; }
+}
+@keyframes svgNeuralFire {
+  0%, 75%, 100% { opacity: 0.6;  transform: scale(1);    }
+  88%           { opacity: 1;    transform: scale(1.45); }
 }
 
 /* ─── Hero entrance animations ─── */
