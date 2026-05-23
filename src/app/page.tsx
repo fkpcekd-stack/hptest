@@ -80,7 +80,7 @@ export default async function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative lg:min-h-screen bg-white overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+      <section className="relative lg:min-h-screen bg-white overflow-hidden grid grid-cols-1 lg:grid-cols-2 hero-clip">
         {/* Left: text */}
         <div className="relative z-10 flex flex-col justify-start lg:justify-end pt-28 pb-6 lg:pt-36 lg:pb-24 px-8 lg:px-16">
           <p className="hero-animate text-black/30 text-xs font-medium tracking-[0.3em] uppercase mb-8" style={{ animationDelay: "0ms" }}>
@@ -128,7 +128,7 @@ export default async function HomePage() {
 
 
       {/* WORKS */}
-      <section className="bg-white py-32">
+      <section className="bg-white py-32 works-clip">
         <div className="px-8 lg:px-16">
           <div data-reveal="up" className="flex items-end justify-between mb-16 border-b border-black/10 pb-8">
             <div>
@@ -148,15 +148,22 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-black/5">
+          <div className="divide-y divide-black/8">
             {works.map((work, wi) => (
               <article
                 key={work.id}
                 data-reveal="up"
                 data-delay={String(wi * 100)}
-                className="group bg-white p-8 hover:bg-gray-50 transition-colors duration-300 cursor-default"
+                className="group grid grid-cols-1 md:grid-cols-[3rem_220px_1fr] lg:grid-cols-[3rem_280px_1fr] gap-6 lg:gap-12 py-10 items-start"
               >
-                <div className="h-48 bg-gray-100 group-hover:bg-gray-200 transition-colors duration-300 mb-6 overflow-hidden">
+                {/* 連番 */}
+                <div className="hidden md:block pt-1">
+                  <span className="text-xs font-mono text-black/20 tracking-widest">
+                    {String(wi + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                {/* サムネイル */}
+                <div className="h-40 md:h-36 bg-gray-100 group-hover:bg-gray-200 transition-colors duration-300 overflow-hidden shrink-0">
                   {"image" in work && (work as { image?: { url: string } }).image ? (
                     <Image
                       src={(work as { image: { url: string } }).image.url}
@@ -167,21 +174,24 @@ export default async function HomePage() {
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
-                      <div className="w-12 h-12 border border-black/10 group-hover:border-white/10 rounded-full transition-colors duration-500" />
+                      <div className="w-10 h-10 border border-black/10 rounded-full" />
                     </div>
                   )}
                 </div>
-                {work.category && (
-                  <span className="text-xs font-medium text-[#4AB8D8] tracking-wider uppercase mb-3 block">
-                    {work.category}
-                  </span>
-                )}
-                <h3 className="font-bold text-[#0d0d0d] mb-3 leading-snug">
-                  {work.title}
-                </h3>
-                <p className="text-black/45 text-sm leading-relaxed line-clamp-2">
-                  {work.description}
-                </p>
+                {/* テキスト */}
+                <div className="flex flex-col justify-center">
+                  {work.category && (
+                    <span className="text-xs font-medium text-[#4AB8D8] tracking-wider uppercase mb-3 block">
+                      {work.category}
+                    </span>
+                  )}
+                  <h3 className="font-bold text-[#0d0d0d] mb-3 leading-snug text-lg">
+                    {work.title}
+                  </h3>
+                  <p className="text-black/45 text-sm leading-relaxed line-clamp-3">
+                    {work.description}
+                  </p>
+                </div>
               </article>
             ))}
           </div>

@@ -5,8 +5,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollRevealInit from "@/components/ScrollRevealInit";
-import { AnimationProvider } from "@/contexts/AnimationContext";
-import AnimationSwitcher from "@/components/AnimationSwitcher";
+import CustomCursor from "@/components/CustomCursor";
+import IntroAnimation from "@/components/IntroAnimation";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,13 +53,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ja" className={`${inter.variable} ${notoSansJP.variable}`}>
       <body className="min-h-screen flex flex-col bg-white text-[#0F172A] font-sans antialiased">
-        <AnimationProvider>
-          <ScrollRevealInit />
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <AnimationSwitcher />
-        </AnimationProvider>
+        <ScrollRevealInit />
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <CustomCursor />
+        <IntroAnimation />
       </body>
     </html>
   );

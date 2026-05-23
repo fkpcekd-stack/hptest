@@ -1,5 +1,4 @@
 "use client";
-import { useAnimStyle } from "@/contexts/AnimationContext";
 
 const C  = "#1a1a2e";
 const A  = "#4AB8D8";
@@ -130,46 +129,55 @@ const HeroB = () => (
 );
 
 /* ─── C: ボールドグラフィック ─── */
+/* Hero: デジタルメディアでクライアントの利益を最大化 */
 const HeroC = () => (
   <svg viewBox="0 0 480 580" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-    {/* Background diagonal band */}
-    <polygon points="0,100 480,0 480,180 0,280" fill={C} fillOpacity="0.04"/>
-    {/* Large outer ring */}
-    <circle cx="260" cy="270" r="195" stroke={C} strokeOpacity="0.12" strokeWidth="2"/>
-    {/* Large cyan filled circle (main visual weight) */}
-    <circle cx="185" cy="195" r="118" fill={A} fillOpacity="0.18" className="svg-anim" style={{ animation: "svgPulse 4s ease-in-out infinite" }}/>
-    <circle cx="185" cy="195" r="118" stroke={A} strokeOpacity="0.45" strokeWidth="2.5"/>
-    {/* Overlapping bold circle (right) */}
-    <circle cx="355" cy="305" r="105" fill={C} fillOpacity="0.07"/>
-    <circle cx="355" cy="305" r="105" stroke={C} strokeOpacity="0.35" strokeWidth="2.5"/>
-    {/* Intersection accent */}
-    <circle cx="270" cy="245" r="38" fill={A} fillOpacity="0.35" className="svg-anim" style={{ animation: "svgCorePulse 3s ease-in-out infinite" }}/>
-    <circle cx="270" cy="245" r="38" stroke={A} strokeOpacity="0.7"  strokeWidth="2"/>
-    <circle cx="270" cy="245" r="14" fill={A}/>
-    {/* Bold diagonal accent */}
-    <line x1="35"  y1="535" x2="445" y2="45"  stroke={C} strokeOpacity="0.18" strokeWidth="2.5"/>
-    <line x1="25"  y1="555" x2="435" y2="65"  stroke={A} strokeOpacity="0.12" strokeWidth="1.5"/>
-    {/* Bold horizontal bands */}
-    <line x1="0"   y1="440" x2="480" y2="440" stroke={C} strokeOpacity="0.1" strokeWidth="2"/>
-    <line x1="0"   y1="455" x2="480" y2="455" stroke={C} strokeOpacity="0.06" strokeWidth="1"/>
-    <line x1="0"   y1="475" x2="480" y2="475" stroke={A}  strokeOpacity="0.1" strokeWidth="1.5"/>
-    {/* Small accent shapes */}
-    <rect x="38"  y="388" width="40" height="40" stroke={A} strokeOpacity="0.4" strokeWidth="2" fill={A} fillOpacity="0.08" className="svg-anim" style={{ animation: "svgPulse 5s ease-in-out infinite" }}/>
-    <rect x="402" y="110" width="32" height="32" stroke={C} strokeOpacity="0.3" strokeWidth="2" fill="none"/>
-    {/* Bold triangle accent */}
-    <polygon points="388,490 428,490 408,455" stroke={A} strokeOpacity="0.55" strokeWidth="2" fill={A} fillOpacity="0.15"/>
-    {/* Small circle details */}
-    <circle cx="60"  cy="155" r="10" stroke={C} strokeOpacity="0.3" strokeWidth="1.5" fill="none"/>
-    <circle cx="425" cy="430" r="14" stroke={A}  strokeOpacity="0.5" strokeWidth="1.5" fill={A} fillOpacity="0.12" className="svg-anim" style={{ animation: "svgPulse 3.5s ease-in-out infinite", animationDelay: "1s" }}/>
+    {/* Subtle context ring */}
+    <circle cx="240" cy="310" r="218" stroke={C} strokeOpacity="0.07" strokeWidth="2"/>
+    {/* Monitor frame */}
+    <rect x="82" y="152" width="288" height="200" rx="6" fill={A} fillOpacity="0.06" stroke={A} strokeOpacity="0.52" strokeWidth="2.5"/>
+    <line x1="82" y1="180" x2="370" y2="180" stroke={A} strokeOpacity="0.22" strokeWidth="1.5"/>
+    {/* Window dots */}
+    <circle cx="102" cy="166" r="6" fill={A} fillOpacity="0.55"/>
+    <circle cx="120" cy="166" r="6" fill={C} fillOpacity="0.4"/>
+    <circle cx="138" cy="166" r="6" fill={C} fillOpacity="0.22"/>
+    {/* Monitor stand */}
+    <line x1="226" y1="352" x2="226" y2="390" stroke={A} strokeOpacity="0.28" strokeWidth="2.5"/>
+    <line x1="185" y1="390" x2="267" y2="390" stroke={A} strokeOpacity="0.28" strokeWidth="2.5"/>
+    {/* Rising profit bars */}
+    <rect x="108" y="286" width="36" height="56"  fill={C} fillOpacity="0.12" stroke={C} strokeOpacity="0.38" strokeWidth="2"/>
+    <rect x="158" y="260" width="36" height="82"  fill={C} fillOpacity="0.15" stroke={C} strokeOpacity="0.42" strokeWidth="2"/>
+    <rect x="208" y="228" width="36" height="114" fill={C} fillOpacity="0.18" stroke={C} strokeOpacity="0.48" strokeWidth="2"/>
+    <rect x="258" y="192" width="36" height="150" fill={A} fillOpacity="0.22" stroke={A} strokeOpacity="0.72" strokeWidth="2" className="svg-anim" style={{ animation: "svgPulse 3s ease-in-out infinite" }}/>
+    {/* Trend polyline */}
+    <polyline points="126,286 176,260 226,228 276,192" stroke={A} strokeOpacity="0.82" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    {/* Profit arrow breaking out of screen top */}
+    <line x1="226" y1="152" x2="226" y2="55" stroke={A} strokeOpacity="0.78" strokeWidth="3"/>
+    <polygon points="210,60 242,60 226,28" fill={A} fillOpacity="0.92"/>
+    {/* "+" growth symbol top-right */}
+    <circle cx="378" cy="208" r="32" fill={A} fillOpacity="0.14" stroke={A} strokeOpacity="0.55" strokeWidth="2.5" className="svg-anim" style={{ animation: "svgCorePulse 2.8s ease-in-out infinite" }}/>
+    <line x1="378" y1="194" x2="378" y2="222" stroke={A} strokeOpacity="0.88" strokeWidth="3.5"/>
+    <line x1="364" y1="208" x2="392" y2="208" stroke={A} strokeOpacity="0.88" strokeWidth="3.5"/>
+    {/* Left digital channel circle */}
+    <circle cx="50" cy="108" r="42" fill={A} fillOpacity="0.12" stroke={A} strokeOpacity="0.45" strokeWidth="2.5" className="svg-anim" style={{ animation: "svgBlink 4s ease-in-out infinite" }}/>
+    <circle cx="50" cy="108" r="15" fill={A} fillOpacity="0.55"/>
+    <line x1="88"  y1="132" x2="116" y2="156" stroke={A} strokeOpacity="0.28" strokeWidth="1.5" strokeDasharray="5,4"/>
+    {/* Right digital channel circle */}
+    <circle cx="422" cy="108" r="36" fill={C} fillOpacity="0.07" stroke={C} strokeOpacity="0.32" strokeWidth="2.5"/>
+    <circle cx="422" cy="108" r="12" fill={C} fillOpacity="0.42"/>
+    <line x1="390" y1="130" x2="362" y2="154" stroke={C} strokeOpacity="0.18" strokeWidth="1.5" strokeDasharray="5,4"/>
+    {/* Bottom media nodes */}
+    <circle cx="82"  cy="455" r="30" fill={A} fillOpacity="0.1" stroke={A} strokeOpacity="0.32" strokeWidth="2" className="svg-anim" style={{ animation: "svgPulse 4.5s ease-in-out infinite", animationDelay: "0.5s" }}/>
+    <circle cx="368" cy="455" r="24" fill={C} fillOpacity="0.06" stroke={C} strokeOpacity="0.22" strokeWidth="2"/>
     {/* Bold corner brackets */}
-    <line x1="28"  y1="28"  x2="58"  y2="28"  stroke={C} strokeOpacity="0.4" strokeWidth="2"/>
-    <line x1="28"  y1="28"  x2="28"  y2="58"  stroke={C} strokeOpacity="0.4" strokeWidth="2"/>
+    <line x1="28"  y1="28"  x2="62"  y2="28"  stroke={C} strokeOpacity="0.4"  strokeWidth="2"/>
+    <line x1="28"  y1="28"  x2="28"  y2="62"  stroke={C} strokeOpacity="0.4"  strokeWidth="2"/>
     <line x1="452" y1="552" x2="422" y2="552" stroke={A}  strokeOpacity="0.55" strokeWidth="2"/>
     <line x1="452" y1="552" x2="452" y2="522" stroke={A}  strokeOpacity="0.55" strokeWidth="2"/>
-    <line x1="452" y1="28"  x2="422" y2="28"  stroke={C} strokeOpacity="0.3" strokeWidth="1.5"/>
-    <line x1="452" y1="28"  x2="452" y2="58"  stroke={C} strokeOpacity="0.3" strokeWidth="1.5"/>
-    <line x1="28"  y1="552" x2="58"  y2="552" stroke={A}  strokeOpacity="0.4" strokeWidth="1.5"/>
-    <line x1="28"  y1="552" x2="28"  y2="522" stroke={A}  strokeOpacity="0.4" strokeWidth="1.5"/>
+    <line x1="452" y1="28"  x2="422" y2="28"  stroke={C} strokeOpacity="0.3"  strokeWidth="1.5"/>
+    <line x1="452" y1="28"  x2="452" y2="58"  stroke={C} strokeOpacity="0.3"  strokeWidth="1.5"/>
+    <line x1="28"  y1="552" x2="58"  y2="552" stroke={A}  strokeOpacity="0.4"  strokeWidth="1.5"/>
+    <line x1="28"  y1="552" x2="28"  y2="522" stroke={A}  strokeOpacity="0.4"  strokeWidth="1.5"/>
   </svg>
 );
 
@@ -287,14 +295,9 @@ const HeroE = () => (
 );
 
 export default function HeroIllustration() {
-  const { style } = useAnimStyle();
   return (
     <div className="w-full max-w-xs lg:max-w-lg">
-      {style === "A" && <HeroA />}
-      {style === "B" && <HeroB />}
-      {style === "C" && <HeroC />}
-      {style === "D" && <HeroD />}
-      {style === "E" && <HeroE />}
+      <HeroC />
     </div>
   );
 }

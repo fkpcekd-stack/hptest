@@ -8,8 +8,7 @@ const links: Record<string, { href: string; label: string }[]> = {
   ],
   会社情報: [
     { href: "/about", label: "会社概要" },
-    { href: "/news", label: "お知らせ" },
-    { href: "/contact", label: "お問い合わせ" },
+{ href: "/contact", label: "お問い合わせ" },
   ],
   法的情報: [
     { href: "/privacy", label: "プライバシーポリシー" },
@@ -30,8 +29,8 @@ export default function Footer() {
               className="h-8 w-auto mb-6"
             />
             <p className="text-sm text-black/40 leading-relaxed mb-6">
-              ビジネスの課題を、
-              <br />テクノロジーで解決する。
+              集客を、仕組みで
+              <br />最大化する。
             </p>
             <p className="text-xs text-black/30 leading-relaxed">
               〒150-0001 東京都渋谷区〇〇1-2-3

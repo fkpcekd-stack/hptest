@@ -8,7 +8,13 @@ const navLinks = [
   { href: "/", label: "TOP" },
   { href: "/services", label: "サービス" },
   { href: "/works", label: "実績" },
-  { href: "/news", label: "お知らせ" },
+  { href: "/about", label: "会社概要" },
+  { href: "/contact", label: "CONTACT" },
+];
+
+const headerNavLinks = [
+  { href: "/services", label: "サービス" },
+  { href: "/works", label: "実績" },
   { href: "/about", label: "会社概要" },
   { href: "/contact", label: "CONTACT" },
 ];
@@ -65,8 +71,38 @@ export default function Header() {
               />
             </Link>
 
+            {/* Desktop nav links */}
+            <nav className="hidden md:flex items-center gap-8">
+              {headerNavLinks.map((link) => (
+                link.href === "/contact" ? (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`text-xs font-semibold tracking-[0.15em] px-4 py-2 border transition-all duration-300 ${
+                      isDark
+                        ? "border-white/40 text-white hover:bg-white hover:text-[#0d0d0d]"
+                        : "border-[#0d0d0d]/30 text-[#0d0d0d] hover:border-[#0d0d0d] hover:bg-[#0d0d0d] hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`text-xs font-medium tracking-[0.15em] transition-colors duration-300 relative group ${
+                      isDark ? "text-white/70 hover:text-white" : "text-[#0d0d0d]/60 hover:text-[#0d0d0d]"
+                    } ${pathname === link.href ? (isDark ? "text-white" : "text-[#0d0d0d]") : ""}`}
+                  >
+                    {link.label}
+                    <span className={`absolute -bottom-0.5 left-0 h-px bg-current transition-all duration-300 ${pathname === link.href ? "w-full" : "w-0 group-hover:w-full"}`} />
+                  </Link>
+                )
+              ))}
+            </nav>
+
             <button
-              className="flex items-center gap-3 cursor-pointer"
+              className="md:hidden flex items-center gap-3 cursor-pointer"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? "閉じる" : "メニューを開く"}
             >
