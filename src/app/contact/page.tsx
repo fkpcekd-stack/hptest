@@ -76,75 +76,18 @@ export default function ContactPage() {
           <p className="text-[#4AB8D8] text-xs font-semibold uppercase tracking-widest mb-6">
             Contact
           </p>
-          <h1 className="text-5xl sm:text-6xl font-bold text-[#0F172A] mb-8 leading-tight tracking-tight">
+          <h1 className="text-4xl sm:text-5xl sm:text-6xl font-bold text-[#0F172A] mb-8 leading-tight tracking-tight">
             お問い合わせ
           </h1>
-          <p className="text-gray-500 text-lg max-w-xl leading-relaxed">
-            プロジェクトのご相談・お見積りから、技術的なご質問まで、お気軽にご連絡ください。
-            2営業日以内にご返答いたします。
-          </p>
         </div>
       </section>
 
       {/* Form Section */}
       <section className="pb-32 bg-white">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            {/* Contact Info */}
-            <aside className="space-y-8">
-              <div className="space-y-6">
-                {[
-                  {
-                    icon: (
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    ),
-                    label: "電話番号",
-                    value: "03-XXXX-XXXX",
-                  },
-                  {
-                    icon: (
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    ),
-                    label: "メール",
-                    value: "info@dk311.jp",
-                  },
-                  {
-                    icon: (
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    ),
-                    label: "営業時間",
-                    value: "平日 9:00〜18:00",
-                  },
-                ].map((item) => (
-                  <div key={item.label} className="flex gap-4">
-                    <div className="w-10 h-10 bg-[#F8FAFC] rounded-xl flex items-center justify-center text-[#64748B] shrink-0">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-400 mb-0.5">{item.label}</p>
-                      <p className="text-sm font-medium text-[#0F172A]">{item.value}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-[#0F172A] rounded-2xl p-7 text-white">
-                <h3 className="font-semibold mb-3 text-sm">対応時間について</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  お問い合わせいただいた内容は、通常2営業日以内にご返答いたします。
-                  お急ぎの場合はお電話でご連絡ください。
-                </p>
-              </div>
-            </aside>
-
+          <div>
             {/* Form */}
-            <div className="lg:col-span-2">
+            <div>
               {submitStatus === "success" ? (
                 <div className="text-center py-20">
                   <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -256,7 +199,7 @@ export default function ContactPage() {
                     <textarea
                       {...register("message")}
                       rows={6}
-                      placeholder="お問い合わせ内容をご記入ください。&#10;例：Webシステム開発のご相談をしたいと考えています。..."
+                      placeholder="お問い合わせ内容をご記入ください。"
                       className={`${inputClass(!!errors.message)} resize-none`}
                     />
                     {errors.message && (

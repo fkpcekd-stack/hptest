@@ -4,7 +4,7 @@ import Image from "next/image";
 const links: Record<string, { href: string; label: string }[]> = {
   サービス: [
     { href: "/services", label: "サービス一覧" },
-    { href: "/works", label: "導入実績" },
+    { href: "/works", label: "実績" },
   ],
   会社情報: [
     { href: "/about", label: "会社概要" },
@@ -18,8 +18,8 @@ const links: Record<string, { href: string; label: string }[]> = {
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-black/6">
-      <div className="px-8 lg:px-16 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-black/6">
+      <div className="px-8 lg:px-16 py-12 sm:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-12 pb-12 sm:pb-16 border-b border-black/6">
           <div className="md:col-span-1">
             <Image
               src="/logo.png"

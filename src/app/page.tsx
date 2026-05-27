@@ -10,25 +10,25 @@ const fallbackServices = [
     id: "1",
     title: "広告運用事業",
     description:
-      "リスティング広告・SNS広告・ディスプレイ広告など、成果につながるデジタル広告を一気通貫で運用します。",
+      "Meta広告、TikTok広告など、成果につながるデジタル広告を一気通貫で運用します。",
   },
   {
     id: "2",
     title: "SEO事業",
     description:
-      "検索上位表示を実現するSEO対策と、集客力の高いオウンドメディアの構築・運営を支援します。",
+      "SEO対策による検索流入の最大化と、質の高いユーザー送客を支援します。",
   },
   {
     id: "3",
     title: "代理事業",
     description:
-      "企業のマーケティング・広報活動を代行し、専門知識とリソースで効果的な施策を展開します。",
+      "広告主とメディアの架け橋となり、集客・認知拡大・成果獲得まで、目的に合わせた広告運用を支援します。",
   },
   {
     id: "4",
     title: "コンテンツ事業",
     description:
-      "ブランドの価値を高める記事・動画・SNSコンテンツを企画・制作・配信します。",
+      "キャラクターやイラストを活用し、親しみやすく伝わるコンテンツ制作を行います。",
   },
   {
     id: "5",
@@ -134,7 +134,7 @@ export default async function HomePage() {
             <div>
               <p className="text-[#4AB8D8] text-xs tracking-[0.3em] uppercase mb-3">Works</p>
               <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] tracking-tight">
-                導入実績
+                実績
               </h2>
             </div>
             <Link

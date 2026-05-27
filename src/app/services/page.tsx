@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
-import { IllustC01, IllustC02, IllustC04, IllustC05 } from "@/components/BoldIllustrations";
+import { IllustC01, IllustC02, IllustC03, IllustC04, IllustC05 } from "@/components/BoldIllustrations";
 import { SERVICES } from "@/lib/servicesData";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "株式会社DKのサービス一覧。デジタル広告・SEOメディア・コンテンツ制作・有料職業紹介など、企業の集客・ブランディング・売上拡大を支援するサービスをご提供します。",
 };
 
-const illustrations = [IllustC01, IllustC02, IllustC04, IllustC05];
+const illustrations = [IllustC01, IllustC02, IllustC03, IllustC04, IllustC05];
 
 export default function ServicesPage() {
   return (
@@ -53,9 +53,9 @@ export default function ServicesPage() {
               className={`border-b border-black/6 ${i === 0 ? "border-t" : ""}`}
             >
               <div
-                className={`px-8 lg:px-16 py-20 lg:py-28 flex flex-col ${
+                className={`px-8 lg:px-16 py-12 sm:py-20 lg:py-28 flex flex-col ${
                   isEven ? "lg:flex-row-reverse" : "lg:flex-row"
-                } gap-12 lg:gap-20 items-center max-w-screen-xl mx-auto`}
+                } gap-8 sm:gap-12 lg:gap-20 items-center max-w-screen-xl mx-auto`}
               >
                 {/* Illustration */}
                 <div

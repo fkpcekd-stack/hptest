@@ -5,7 +5,7 @@ import CTASection from "@/components/CTASection";
 import { getWorksList } from "@/lib/microcms";
 
 export const metadata: Metadata = {
-  title: "導入実績",
+  title: "実績",
   description:
     "株式会社DKの導入実績・ポートフォリオ。製造業・流通業・IT企業など多様な業界のDX・システム開発実績をご紹介します。",
 };
@@ -84,12 +84,9 @@ export default async function WorksPage() {
           <p className="text-[#4AB8D8] text-xs font-semibold uppercase tracking-widest mb-6">
             Works
           </p>
-          <h1 className="text-5xl sm:text-6xl font-bold text-[#0F172A] mb-8 leading-tight tracking-tight">
-            導入実績
+          <h1 className="text-4xl sm:text-5xl sm:text-6xl font-bold text-[#0F172A] mb-8 leading-tight tracking-tight">
+            実績
           </h1>
-          <p className="text-gray-500 text-lg max-w-xl leading-relaxed">
-            多様な業界・規模のお客様に対して、デジタル変革の実績を積み重ねています。
-          </p>
         </div>
       </section>
 

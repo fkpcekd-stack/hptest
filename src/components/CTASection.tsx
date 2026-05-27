@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function CTASection() {
   return (
-    <section className="bg-[#4AB8D8] py-32 cta-clip">
+    <section className="bg-[#4AB8D8] py-20 sm:py-32 cta-clip">
       <div className="px-8 lg:px-16">
         <div className="max-w-4xl">
           <p className="text-white/60 text-xs tracking-[0.3em] uppercase mb-6">Contact</p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 leading-[1.1] tracking-tight">
             まずはお気軽に
             <br />
             ご相談ください。

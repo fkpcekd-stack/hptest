@@ -65,7 +65,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <p
             data-reveal="up"
             data-delay="160"
-            className="text-black/45 text-lg max-w-2xl leading-relaxed"
+            className="text-black/45 text-base sm:text-lg max-w-2xl leading-relaxed"
           >
             {service.description}
           </p>
@@ -86,7 +86,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       {/* Detail content */}
       <section className="py-20 bg-white">
         <div className="px-8 lg:px-16 max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-24">
             {/* Left: detail description */}
             <div>
               <h2
@@ -108,7 +108,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               <div data-reveal="up" data-delay="120">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-3 bg-[#0d0d0d] text-white text-sm font-semibold px-8 py-4 hover:bg-[#4AB8D8] transition-colors duration-300 group"
+                  className="inline-flex w-full sm:w-auto justify-center sm:justify-start items-center gap-3 bg-[#0d0d0d] text-white text-sm font-semibold px-8 py-4 hover:bg-[#4AB8D8] transition-colors duration-300 group"
                 >
                   このサービスについて相談する
                   <svg
