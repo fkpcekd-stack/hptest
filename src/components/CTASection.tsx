@@ -11,11 +11,7 @@ export default function CTASection() {
             <br />
             ご相談ください。
           </h2>
-          <p className="text-white/70 text-base leading-relaxed mb-12 max-w-lg">
-            プロジェクトのご相談から、技術的なご質問まで、
-            2営業日以内にご返答いたします。
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+<div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/contact"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0d0d0d] font-semibold text-sm hover:bg-[#0d0d0d] hover:text-white transition-colors duration-300 group"
