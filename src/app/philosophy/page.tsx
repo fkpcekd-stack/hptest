@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "経営理念",
+  title: "ビジョン",
   description:
-    "株式会社DKの経営理念。高水準・挑戦・躍進の三つの柱を軸に、企業の集客・ブランディング・売上拡大を支援します。",
+    "株式会社DKのビジョン。高水準・挑戦・躍進の三つの柱を軸に、企業の集客・ブランディング・売上拡大を支援します。",
 };
 
 const mvValues = [
@@ -43,7 +43,7 @@ export default function PhilosophyPage() {
             data-delay="80"
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d0d0d] mb-8 leading-none tracking-tight"
           >
-            経営理念
+            ビジョン
           </h1>
         </div>
       </section>

@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/services", label: "サービス" },
   { href: "/works", label: "実績" },
   { href: "/about", label: "会社概要" },
-  { href: "/philosophy", label: "経営理念" },
+  { href: "/philosophy", label: "ビジョン" },
   { href: "/contact", label: "CONTACT" },
 ];
 
@@ -17,7 +17,7 @@ const headerNavLinks = [
   { href: "/services", label: "サービス" },
   { href: "/works", label: "実績" },
   { href: "/about", label: "会社概要" },
-  { href: "/philosophy", label: "経営理念" },
+  { href: "/philosophy", label: "ビジョン" },
   { href: "/contact", label: "CONTACT" },
 ];
 
