@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ja" className={`${inter.variable} ${notoSansJP.variable}`}>
-      <body className="min-h-screen flex flex-col bg-white text-[#0F172A] font-sans antialiased">
+      <body suppressHydrationWarning className="min-h-screen flex flex-col bg-white text-[#0F172A] font-sans antialiased">
         <ScrollRevealInit />
         <Header />
         <main className="flex-1">{children}</main>
