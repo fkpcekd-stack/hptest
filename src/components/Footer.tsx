@@ -8,7 +8,8 @@ const links: Record<string, { href: string; label: string }[]> = {
   ],
   会社情報: [
     { href: "/about", label: "会社概要" },
-{ href: "/contact", label: "お問い合わせ" },
+    { href: "/philosophy", label: "経営理念" },
+    { href: "/contact", label: "お問い合わせ" },
   ],
   法的情報: [
     { href: "/privacy", label: "プライバシーポリシー" },

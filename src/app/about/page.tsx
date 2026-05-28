@@ -17,23 +17,6 @@ const companyInfo = [
   { label: "役員", value: "代表取締役　古賀大資" },
 ];
 
-const mvValues = [
-  {
-    label: "Highlevel",
-    title: "高水準",
-    text: "常に水準の高い業務とスピードを意識した仕事を遂行します。",
-  },
-  {
-    label: "Challenge",
-    title: "挑戦",
-    text: "私たちは、常に挑戦し続けます。また、常に結果重視の姿勢を貫き通します。",
-  },
-  {
-    label: "Progress",
-    title: "躍進",
-    text: "弊社は創業時より、常に躍進を続けてまいりました。一つの困難に直面したら、二つの壁を乗り越えるつもりで取り組む。これが私たちの信念です。",
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -87,37 +70,6 @@ export default function AboutPage() {
               </div>
             ))}
           </dl>
-        </div>
-      </section>
-
-      {/* Mission / Vision / Values */}
-      <section className="py-24 bg-[#f7f8f9] border-t border-black/6">
-        <div className="px-8 lg:px-16">
-          <div data-reveal="up" data-delay="0" className="border-b border-black/8 pb-8 mb-0">
-            <p className="text-[#4AB8D8] text-xs tracking-[0.3em] uppercase mb-3">
-              Philosophy
-            </p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] tracking-tight">
-              経営理念
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black/6">
-            {mvValues.map((item, i) => (
-              <div
-                key={item.label}
-                data-reveal="up"
-                data-delay={String(i * 80)}
-                className="py-10 sm:py-12 md:px-12 first:md:pl-0 last:md:pr-0"
-              >
-                <p className="text-[#4AB8D8] text-xs font-semibold uppercase tracking-[0.25em] mb-4">
-                  {item.label}
-                </p>
-                <h3 className="text-xl font-bold text-[#0d0d0d] mb-5">{item.title}</h3>
-                <p className="text-black/45 text-sm leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
