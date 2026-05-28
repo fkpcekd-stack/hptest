@@ -82,16 +82,16 @@ export default async function HomePage() {
       {/* HERO */}
       <section className="relative lg:min-h-screen bg-white overflow-hidden grid grid-cols-1 lg:grid-cols-2 hero-clip">
         {/* Left: text */}
-        <div className="relative z-10 flex flex-col justify-start lg:justify-end pt-28 pb-6 lg:pt-36 lg:pb-24 px-8 lg:px-16">
-          <p className="hero-animate text-black/30 text-xs font-medium tracking-[0.3em] uppercase mb-8" style={{ animationDelay: "0ms" }}>
+        <div className="relative z-10 flex flex-col justify-start lg:justify-end pt-24 sm:pt-28 pb-4 sm:pb-6 lg:pt-36 lg:pb-24 px-8 lg:px-16">
+          <p className="hero-animate text-black/30 text-xs font-medium tracking-[0.3em] uppercase mb-4 sm:mb-8" style={{ animationDelay: "0ms" }}>
             Digital Marketing × Technology
           </p>
-          <h1 className="hero-animate text-[clamp(2.8rem,6vw,6rem)] font-bold text-[#0d0d0d] leading-[1.05] tracking-tight mb-10" style={{ animationDelay: "120ms" }}>
+          <h1 className="hero-animate text-[clamp(2rem,6vw,6rem)] font-bold text-[#0d0d0d] leading-[1.05] tracking-tight mb-5 sm:mb-10" style={{ animationDelay: "120ms" }}>
             集客を、仕組みで
             <br />
             <span className="text-[#4AB8D8]">最大化する。</span>
           </h1>
-          <p className="hero-animate text-black/45 text-sm leading-relaxed mb-12 max-w-sm" style={{ animationDelay: "240ms" }}>
+          <p className="hero-animate text-black/45 text-sm leading-relaxed mb-8 sm:mb-12 max-w-sm" style={{ animationDelay: "240ms" }}>
             デジタル広告・SEOメディア・コンテンツ制作を通じて、
             企業の集客・ブランディング・売上拡大を支援します。
           </p>
@@ -110,7 +110,7 @@ export default async function HomePage() {
         </div>
 
         {/* Right: SVG illustration */}
-        <div className="hero-illus-animate flex items-center justify-center px-10 pt-0 pb-10 lg:p-16 lg:pt-24" style={{ animationDelay: "200ms" }}>
+        <div className="hero-illus-animate flex items-center justify-center px-6 sm:px-10 pt-2 pb-6 sm:pb-10 lg:p-16 lg:pt-24" style={{ animationDelay: "200ms" }}>
           <HeroIllustrationLoader />
         </div>
 
@@ -128,9 +128,9 @@ export default async function HomePage() {
 
 
       {/* WORKS */}
-      <section className="bg-white py-32 works-clip">
+      <section className="bg-white py-16 sm:py-24 lg:py-32 works-clip">
         <div className="px-8 lg:px-16">
-          <div data-reveal="up" className="flex items-end justify-between mb-16 border-b border-black/10 pb-8">
+          <div data-reveal="up" className="flex items-end justify-between mb-8 sm:mb-16 border-b border-black/10 pb-6 sm:pb-8">
             <div>
               <p className="text-[#4AB8D8] text-xs tracking-[0.3em] uppercase mb-3">Works</p>
               <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] tracking-tight">
@@ -154,7 +154,7 @@ export default async function HomePage() {
                 key={work.id}
                 data-reveal="up"
                 data-delay={String(wi * 100)}
-                className="group grid grid-cols-1 md:grid-cols-[3rem_220px_1fr] lg:grid-cols-[3rem_280px_1fr] gap-6 lg:gap-12 py-10 items-start"
+                className="group grid grid-cols-1 md:grid-cols-[3rem_220px_1fr] lg:grid-cols-[3rem_280px_1fr] gap-4 sm:gap-6 lg:gap-12 py-6 sm:py-10 items-start"
               >
                 {/* 連番 */}
                 <div className="hidden md:block pt-1">
@@ -163,7 +163,7 @@ export default async function HomePage() {
                   </span>
                 </div>
                 {/* サムネイル */}
-                <div className="h-40 md:h-36 bg-gray-100 group-hover:bg-gray-200 transition-colors duration-300 overflow-hidden shrink-0">
+                <div className="h-32 sm:h-40 md:h-36 bg-gray-100 group-hover:bg-gray-200 transition-colors duration-300 overflow-hidden shrink-0">
                   {"image" in work && (work as { image?: { url: string } }).image ? (
                     <Image
                       src={(work as { image: { url: string } }).image.url}

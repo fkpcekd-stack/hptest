@@ -33,11 +33,6 @@ export default function Footer() {
               集客を、仕組みで
               <br />最大化する。
             </p>
-            <p className="text-xs text-black/30 leading-relaxed">
-              〒150-0001 東京都渋谷区〇〇1-2-3
-              <br />
-              info@dk311.jp
-            </p>
           </div>
 
           {Object.entries(links).map(([category, items]) => (
@@ -63,7 +58,7 @@ export default function Footer() {
 
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-black/30">
-            &copy; 2024 株式会社DK. All rights reserved.
+            &copy; 2026 株式会社DK. All rights reserved.
           </p>
         </div>
       </div>
