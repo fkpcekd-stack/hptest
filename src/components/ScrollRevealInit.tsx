@@ -7,11 +7,13 @@ export default function ScrollRevealInit() {
 
     elements.forEach((el) => {
       const dir = el.dataset.reveal ?? "up";
+      const dist = parseInt(el.dataset.distance ?? "28");
+      const duration = el.dataset.duration ?? "0.8s";
       el.style.opacity = "0";
-      el.style.transition = `opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1)`;
-      if (dir === "up")    el.style.transform = "translateY(28px)";
-      if (dir === "left")  el.style.transform = "translateX(-28px)";
-      if (dir === "right") el.style.transform = "translateX(28px)";
+      el.style.transition = `opacity ${duration} cubic-bezier(0.16,1,0.3,1), transform ${duration} cubic-bezier(0.16,1,0.3,1)`;
+      if (dir === "up")    el.style.transform = `translateY(${dist}px)`;
+      if (dir === "left")  el.style.transform = `translateX(-${dist}px)`;
+      if (dir === "right") el.style.transform = `translateX(${dist}px)`;
       if (dir === "fade")  el.style.transform = "none";
     });
 

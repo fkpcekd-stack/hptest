@@ -55,12 +55,14 @@ export default function ServicesPage() {
               <div
                 className={`px-8 lg:px-16 py-12 sm:py-20 lg:py-28 flex flex-col ${
                   isEven ? "lg:flex-row-reverse" : "lg:flex-row"
-                } gap-8 sm:gap-12 lg:gap-20 items-center max-w-screen-xl mx-auto`}
+                } gap-8 sm:gap-12 lg:gap-20 items-center max-w-screen-xl mx-auto overflow-hidden`}
               >
                 {/* Illustration */}
                 <div
                   data-reveal={isEven ? "right" : "left"}
-                  data-delay="0"
+                  data-delay="180"
+                  data-distance="80"
+                  data-duration="1s"
                   className="w-full lg:w-1/2 shrink-0"
                 >
                   <div className="w-full aspect-[4/3] max-w-lg mx-auto">

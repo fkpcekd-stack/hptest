@@ -86,14 +86,22 @@ export default async function HomePage() {
           <p className="hero-animate text-black/30 text-xs font-medium tracking-[0.3em] uppercase mb-4 sm:mb-8" style={{ animationDelay: "0ms" }}>
             Digital Marketing × Technology
           </p>
-          <h1 className="hero-animate text-[clamp(2rem,6vw,6rem)] font-bold text-[#0d0d0d] leading-[1.05] tracking-tight mb-5 sm:mb-10" style={{ animationDelay: "120ms" }}>
-            集客を、仕組みで
-            <br />
-            <span className="text-[#4AB8D8]">最大化する。</span>
+          <h1 className="text-[clamp(2.75rem,7vw,7rem)] font-bold text-[#0d0d0d] leading-[1.05] tracking-tight mb-6 sm:mb-10">
+            <span className="block overflow-hidden pb-[0.05em]">
+              <span className="hero-mask-line" style={{ animationDelay: "180ms" }}>
+                成果を
+              </span>
+            </span>
+            <span className="block overflow-hidden pb-[0.05em]">
+              <span className="hero-mask-line text-[#4AB8D8]" style={{ animationDelay: "380ms" }}>
+                設計する。
+              </span>
+            </span>
           </h1>
-          <p className="hero-animate text-black/45 text-sm leading-relaxed mb-8 sm:mb-12 max-w-sm" style={{ animationDelay: "240ms" }}>
-            デジタル広告・SEOメディア・コンテンツ制作を通じて、
-            企業の集客・ブランディング・売上拡大を支援します。
+          <p className="hero-animate text-black/55 text-base sm:text-lg leading-relaxed mb-8 sm:mb-12 max-w-md" style={{ animationDelay: "240ms" }}>
+            あらゆるビジネスの現場に、
+            <br />
+            「成果が生まれる構造」をインストールする。
           </p>
           <Link
             href="/contact"
@@ -120,6 +128,62 @@ export default async function HomePage() {
           <span className="text-black/20 text-[10px] tracking-[0.3em]" style={{ writingMode: "vertical-lr" }}>
             SCROLL
           </span>
+        </div>
+      </section>
+
+      {/* VISION */}
+      <section className="bg-[#4AB8D8] text-white py-24 sm:py-32 lg:py-40 overflow-hidden relative">
+        <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{
+          backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+          backgroundSize: "32px 32px",
+        }} />
+        <div className="relative px-8 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
+            <div className="lg:col-span-7">
+              <p
+                data-reveal="up"
+                data-delay="0"
+                className="text-white/70 text-xs font-semibold uppercase tracking-[0.3em] mb-8"
+              >
+                Vision
+              </p>
+              <h2
+                data-reveal="up"
+                data-delay="80"
+                className="text-[clamp(2.5rem,6vw,6rem)] font-bold leading-[1.05] tracking-tight"
+              >
+                成果を
+                <br />
+                すべての判断基準に。
+              </h2>
+            </div>
+            <div className="lg:col-span-5 lg:pb-4">
+              <p
+                data-reveal="up"
+                data-delay="160"
+                className="text-white/85 text-base sm:text-lg leading-loose mb-10"
+              >
+                立場ではなく、成果で語る。
+                <br />
+                感覚ではなく、判断で進む。
+                <br />
+                慣習ではなく、変化を選ぶ。
+              </p>
+              <Link
+                href="/philosophy"
+                className="inline-flex items-center gap-3 text-white text-sm font-medium tracking-wider group w-fit"
+                data-reveal="up"
+                data-delay="240"
+              >
+                <span>行動指針を見る</span>
+                <span className="flex items-center justify-center w-10 h-10 border border-white/40 rounded-full group-hover:border-white group-hover:bg-white group-hover:text-[#4AB8D8] transition-all duration-300">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

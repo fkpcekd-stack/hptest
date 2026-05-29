@@ -866,6 +866,7 @@ interface Service { id: string; title: string; description: string; }
 export default function ServiceSection({ services }: { services: Service[] }) {
   const illustrations = illustrationsC;
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const illusRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -885,7 +886,29 @@ export default function ServiceSection({ services }: { services: Service[] }) {
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
     itemRefs.current.forEach((el) => { if (el) observer.observe(el); });
-    return () => observer.disconnect();
+
+    const illusObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            const delay = parseInt(el.dataset.delay || "0");
+            setTimeout(() => {
+              el.style.opacity = "1";
+              el.style.transform = "translateX(0)";
+            }, delay);
+            illusObserver.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -60px 0px" }
+    );
+    illusRefs.current.forEach((el) => { if (el) illusObserver.observe(el); });
+
+    return () => {
+      observer.disconnect();
+      illusObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -936,7 +959,16 @@ export default function ServiceSection({ services }: { services: Service[] }) {
                   </svg>
                 </Link>
               </div>
-              <div className={`flex items-center justify-center bg-gray-50 p-12 lg:p-16 min-h-[280px] ${isEven ? "md:order-first" : ""}`}>
+              <div
+                ref={(el) => { illusRefs.current[i] = el; }}
+                data-delay={String(i * 80 + 180)}
+                className={`flex items-center justify-center bg-gray-50 p-12 lg:p-16 min-h-[280px] overflow-hidden ${isEven ? "md:order-first" : ""}`}
+                style={{
+                  opacity: 0,
+                  transform: `translateX(${isEven ? "-80px" : "80px"})`,
+                  transition: "opacity 1s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1)",
+                }}
+              >
                 <div className="w-full max-w-sm">{illustrations[i]}</div>
               </div>
             </div>
