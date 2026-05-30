@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import RevealChars from "@/components/RevealChars";
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
@@ -96,7 +97,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </p>
           <h1 className="text-5xl sm:text-6xl font-bold text-[#0F172A] mb-8 leading-tight tracking-tight">
-            プライバシーポリシー
+            <RevealChars lines={["プライバシーポリシー"]} delay={120} charDelay={50} />
           </h1>
           <p className="text-gray-500 text-lg max-w-xl leading-relaxed">
             個人情報保護方針

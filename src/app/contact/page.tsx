@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Link from "next/link";
+import RevealChars from "@/components/RevealChars";
 
 const contactSchema = z.object({
   company: z.string().min(1, "会社名を入力してください"),
@@ -77,7 +78,7 @@ export default function ContactPage() {
             Contact
           </p>
           <h1 className="text-4xl sm:text-5xl sm:text-6xl font-bold text-[#0F172A] mb-8 leading-tight tracking-tight">
-            お問い合わせ
+            <RevealChars lines={["お問い合わせ"]} delay={120} charDelay={60} />
           </h1>
         </div>
       </section>

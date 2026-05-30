@@ -3,6 +3,7 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { IllustC01, IllustC02, IllustC03, IllustC04, IllustC05 } from "@/components/BoldIllustrations";
 import { SERVICES } from "@/lib/servicesData";
+import RevealChars from "@/components/RevealChars";
 
 export const metadata: Metadata = {
   title: "サービス",
@@ -25,12 +26,8 @@ export default function ServicesPage() {
           >
             Services
           </p>
-          <h1
-            data-reveal="up"
-            data-delay="80"
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d0d0d] mb-8 leading-none tracking-tight"
-          >
-            サービス
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d0d0d] mb-8 leading-none tracking-tight">
+            <RevealChars lines={["サービス"]} delay={120} charDelay={60} />
           </h1>
           <p
             data-reveal="up"

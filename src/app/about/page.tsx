@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import CTASection from "@/components/CTASection";
+import RevealChars from "@/components/RevealChars";
 
 export const metadata: Metadata = {
   title: "会社概要",
@@ -31,12 +32,8 @@ export default function AboutPage() {
           >
             About Us
           </p>
-          <h1
-            data-reveal="up"
-            data-delay="80"
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d0d0d] mb-8 leading-none tracking-tight"
-          >
-            会社概要
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d0d0d] mb-8 leading-none tracking-tight">
+            <RevealChars lines={["会社概要"]} delay={120} charDelay={60} />
           </h1>
         </div>
       </section>
@@ -50,7 +47,7 @@ export default function AboutPage() {
                 Company Info
               </p>
               <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] tracking-tight">
-                会社情報
+                <RevealChars lines={["会社情報"]} delay={80} charDelay={50} />
               </h2>
             </div>
           </div>

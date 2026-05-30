@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import { getWorksList } from "@/lib/microcms";
+import RevealChars from "@/components/RevealChars";
 
 export const metadata: Metadata = {
   title: "実績",
@@ -85,7 +86,7 @@ export default async function WorksPage() {
             Works
           </p>
           <h1 className="text-4xl sm:text-5xl sm:text-6xl font-bold text-[#0F172A] mb-8 leading-tight tracking-tight">
-            実績
+            <RevealChars lines={["実績"]} delay={120} charDelay={80} />
           </h1>
         </div>
       </section>

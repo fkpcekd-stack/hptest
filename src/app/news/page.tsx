@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { getNewsList } from "@/lib/microcms";
+import RevealChars from "@/components/RevealChars";
 
 export const metadata: Metadata = {
   title: "お知らせ",
@@ -34,7 +35,7 @@ export default async function NewsPage() {
             News
           </p>
           <h1 className="text-5xl sm:text-6xl font-bold text-[#0F172A] mb-8 leading-tight tracking-tight">
-            お知らせ
+            <RevealChars lines={["お知らせ"]} delay={120} charDelay={60} />
           </h1>
           <p className="text-gray-500 text-lg max-w-xl leading-relaxed">
             株式会社DKからの最新情報をお届けします。
