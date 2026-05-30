@@ -134,15 +134,14 @@ export default function PhilosophyPage() {
 
       {/* Value */}
       <section className="py-24 sm:py-32 bg-white">
-        <div className="px-6 lg:px-12">
-          <p
-            data-reveal="up"
-            data-delay="0"
-            className="text-[#4AB8D8] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-[0.05em] mb-16 leading-none"
-          >
-            Value
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 border-t border-black/8">
+        <p
+          data-reveal="up"
+          data-delay="0"
+          className="text-[#4AB8D8] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-[0.05em] mb-16 leading-none px-6 lg:px-12"
+        >
+          Value
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 border-t border-black/8">
             {values.map((item, i) => {
               const isLast = i === values.length - 1;
               if (isLast) {
@@ -151,7 +150,7 @@ export default function PhilosophyPage() {
                     key={item.label}
                     data-reveal="up"
                     data-delay={String(i * 80)}
-                    className="relative overflow-hidden md:col-span-2 border-b border-black/8 bg-[#0d0d0d] py-20 sm:py-28 px-6 sm:px-10 text-center"
+                    className="relative overflow-hidden md:col-span-2 border-b border-black/8 bg-[#0d0d0d] py-20 sm:py-28 px-3 sm:px-5 text-center"
                   >
                     <ParallaxNumber className="absolute inset-0 flex items-center justify-center text-[18rem] sm:text-[26rem] lg:text-[32rem] font-black text-white/[0.06] leading-none select-none">
                       05
@@ -181,7 +180,7 @@ export default function PhilosophyPage() {
                   key={item.label}
                   data-reveal="up"
                   data-delay={String(i * 80)}
-                  className="relative overflow-hidden py-12 sm:py-16 px-6 sm:px-10 border-b border-black/8 md:[&:nth-child(odd)]:border-r border-black/8"
+                  className="relative overflow-hidden py-12 sm:py-16 px-3 sm:px-5 border-b border-black/8 md:[&:nth-child(odd)]:border-r border-black/8"
                 >
                   <ParallaxNumber className="absolute -right-6 -bottom-12 text-[12rem] sm:text-[15rem] font-black text-black/[0.05] leading-none select-none">
                     0{i + 1}
@@ -203,7 +202,6 @@ export default function PhilosophyPage() {
                 </div>
               );
             })}
-          </div>
         </div>
       </section>
 
