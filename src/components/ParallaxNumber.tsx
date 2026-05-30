@@ -14,17 +14,13 @@ export default function ParallaxNumber({
   className = "",
   distance = 120,
   duration = 1.2,
-  threshold = 0.55,
+  threshold = 0.35,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-
-    el.style.opacity = "0";
-    el.style.transform = `translateY(${distance}px)`;
-    el.style.transition = `opacity ${duration}s cubic-bezier(0.16,1,0.3,1), transform ${duration}s cubic-bezier(0.16,1,0.3,1)`;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -40,10 +36,19 @@ export default function ParallaxNumber({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [distance, duration, threshold]);
+  }, [threshold]);
 
   return (
-    <div ref={ref} className={`pointer-events-none ${className}`} aria-hidden>
+    <div
+      ref={ref}
+      className={`pointer-events-none ${className}`}
+      aria-hidden
+      style={{
+        opacity: 0,
+        transform: `translateY(${distance}px)`,
+        transition: `opacity ${duration}s cubic-bezier(0.16,1,0.3,1), transform ${duration}s cubic-bezier(0.16,1,0.3,1)`,
+      }}
+    >
       {children}
     </div>
   );
