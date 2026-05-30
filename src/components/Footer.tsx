@@ -4,7 +4,6 @@ import Image from "next/image";
 const links: Record<string, { href: string; label: string }[]> = {
   サービス: [
     { href: "/services", label: "サービス一覧" },
-    { href: "/works", label: "実績" },
   ],
   会社情報: [
     { href: "/about", label: "会社概要" },
@@ -29,10 +28,6 @@ export default function Footer() {
               height={30}
               className="h-8 w-auto mb-6"
             />
-            <p className="text-sm text-black/40 leading-relaxed mb-6">
-              成果を
-              <br />設計する。
-            </p>
           </div>
 
           {Object.entries(links).map(([category, items]) => (

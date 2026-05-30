@@ -1,9 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import ServiceSectionLoader from "@/components/ServiceSectionLoader";
 import HeroIllustrationLoader from "@/components/HeroIllustrationLoader";
-import { getServicesList, getWorksList } from "@/lib/microcms";
+import { getServicesList } from "@/lib/microcms";
 
 const fallbackServices = [
   {
@@ -38,44 +37,11 @@ const fallbackServices = [
   },
 ];
 
-const fallbackWorks = [
-  {
-    id: "1",
-    title: "EC企業 デジタル広告運用支援",
-    category: "デジタル広告",
-    description:
-      "Google・Meta広告の統合運用により、ROAS180%改善。月間売上を3ヶ月で約2倍に拡大しました。",
-    publishedAt: "2025-03-01",
-  },
-  {
-    id: "2",
-    title: "人材サービス企業 SEOメディア構築",
-    category: "SEOメディア",
-    description:
-      "オウンドメディアをゼロから立ち上げ、6ヶ月で月間30万PVを達成。自然流入による問い合わせが急増しました。",
-    publishedAt: "2025-02-01",
-  },
-  {
-    id: "3",
-    title: "美容サロン コンテンツ・SNS運用",
-    category: "コンテンツ",
-    description:
-      "Instagram・TikTok運用代行により、フォロワーを6ヶ月で10倍に成長。SNS経由の予約数が月間200件を突破しました。",
-    publishedAt: "2025-01-01",
-  },
-];
-
-
 export default async function HomePage() {
-  const [servicesData, worksData] = await Promise.all([
-    getServicesList(5),
-    getWorksList(3),
-  ]);
+  const servicesData = await getServicesList(5);
 
   const services =
     servicesData.contents.length > 0 ? servicesData.contents : fallbackServices;
-  const works =
-    worksData.contents.length > 0 ? worksData.contents : fallbackWorks;
 
   return (
     <>
@@ -86,7 +52,7 @@ export default async function HomePage() {
           <p className="hero-animate text-black/30 text-xs font-medium tracking-[0.3em] uppercase mb-4 sm:mb-8" style={{ animationDelay: "0ms" }}>
             Digital Marketing × Technology
           </p>
-          <h1 className="text-[clamp(2.75rem,7vw,7rem)] font-bold text-[#0d0d0d] leading-[1.05] tracking-tight mb-6 sm:mb-10">
+          <h1 className="text-[clamp(3rem,7.5vw,8.5rem)] font-bold text-[#0d0d0d] leading-[1.02] tracking-tight mb-6 sm:mb-10">
             <span className="block overflow-hidden pb-[0.05em]">
               <span className="hero-mask-line" style={{ animationDelay: "180ms" }}>
                 成果を
@@ -189,90 +155,6 @@ export default async function HomePage() {
 
       {/* SERVICES */}
       <ServiceSectionLoader services={services} />
-
-
-      {/* WORKS */}
-      <section className="bg-white py-16 sm:py-24 lg:py-32 works-clip">
-        <div className="px-8 lg:px-16">
-          <div data-reveal="up" className="flex items-end justify-between mb-8 sm:mb-16 border-b border-black/10 pb-6 sm:pb-8">
-            <div>
-              <p className="text-[#4AB8D8] text-xs tracking-[0.3em] uppercase mb-3">Works</p>
-              <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] tracking-tight">
-                実績
-              </h2>
-            </div>
-            <Link
-              href="/works"
-              className="hidden sm:flex items-center gap-2 text-black/30 hover:text-black text-sm transition-colors duration-200 group"
-            >
-              すべて見る
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-
-          <div className="divide-y divide-black/8">
-            {works.map((work, wi) => (
-              <article
-                key={work.id}
-                data-reveal="up"
-                data-delay={String(wi * 100)}
-                className="group grid grid-cols-1 md:grid-cols-[3rem_220px_1fr] lg:grid-cols-[3rem_280px_1fr] gap-4 sm:gap-6 lg:gap-12 py-6 sm:py-10 items-start"
-              >
-                {/* 連番 */}
-                <div className="hidden md:block pt-1">
-                  <span className="text-xs font-mono text-black/20 tracking-widest">
-                    {String(wi + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                {/* サムネイル */}
-                <div className="h-32 sm:h-40 md:h-36 bg-gray-100 group-hover:bg-gray-200 transition-colors duration-300 overflow-hidden shrink-0">
-                  {"image" in work && (work as { image?: { url: string } }).image ? (
-                    <Image
-                      src={(work as { image: { url: string } }).image.url}
-                      alt={work.title}
-                      width={600}
-                      height={400}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="w-10 h-10 border border-black/10 rounded-full" />
-                    </div>
-                  )}
-                </div>
-                {/* テキスト */}
-                <div className="flex flex-col justify-center">
-                  {work.category && (
-                    <span className="text-xs font-medium text-[#4AB8D8] tracking-wider uppercase mb-3 block">
-                      {work.category}
-                    </span>
-                  )}
-                  <h3 className="font-bold text-[#0d0d0d] mb-3 leading-snug text-lg">
-                    {work.title}
-                  </h3>
-                  <p className="text-black/45 text-sm leading-relaxed line-clamp-3">
-                    {work.description}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-10 sm:hidden">
-            <Link
-              href="/works"
-              className="flex items-center gap-2 text-black/30 hover:text-black text-sm transition-colors duration-200"
-            >
-              すべて見る
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
 
 
       <CTASection />

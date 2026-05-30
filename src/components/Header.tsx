@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "TOP" },
   { href: "/services", label: "サービス" },
-  { href: "/works", label: "実績" },
   { href: "/about", label: "会社概要" },
   { href: "/philosophy", label: "行動指針" },
   { href: "/contact", label: "CONTACT" },
@@ -15,7 +14,6 @@ const navLinks = [
 
 const headerNavLinks = [
   { href: "/services", label: "サービス" },
-  { href: "/works", label: "実績" },
   { href: "/about", label: "会社概要" },
   { href: "/philosophy", label: "行動指針" },
   { href: "/contact", label: "CONTACT" },
