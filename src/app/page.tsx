@@ -141,7 +141,7 @@ export default async function HomePage() {
                 data-reveal="up"
                 data-delay="240"
               >
-                <span>行動指針を見る</span>
+                <span>MVVを見る</span>
                 <span className="flex items-center justify-center w-10 h-10 border border-white/40 rounded-full group-hover:border-white group-hover:bg-white group-hover:text-[#4AB8D8] transition-all duration-300">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />

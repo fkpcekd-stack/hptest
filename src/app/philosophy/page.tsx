@@ -6,7 +6,7 @@ import ParallaxNumber from "@/components/ParallaxNumber";
 export const metadata: Metadata = {
   title: "Mission Vision Value",
   description:
-    "株式会社DKの行動指針。成果を設計し、すべての判断基準に置く。あらゆるビジネスの現場に「成果が生まれる構造」をインストールします。",
+    "株式会社DKのMVV。成果を設計し、すべての判断基準に置く。あらゆるビジネスの現場に「成果が生まれる構造」をインストールします。",
 };
 
 const values = [

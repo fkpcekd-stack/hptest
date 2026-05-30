@@ -7,7 +7,7 @@ const links: Record<string, { href: string; label: string }[]> = {
   ],
   会社情報: [
     { href: "/about", label: "会社概要" },
-    { href: "/philosophy", label: "行動指針" },
+    { href: "/philosophy", label: "MVV" },
     { href: "/contact", label: "お問い合わせ" },
   ],
   法的情報: [
