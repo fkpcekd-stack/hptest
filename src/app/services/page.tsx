@@ -29,13 +29,6 @@ export default function ServicesPage() {
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d0d0d] mb-8 leading-none tracking-tight">
             <RevealChars lines={["サービス"]} delay={120} charDelay={60} />
           </h1>
-          <p
-            data-reveal="up"
-            data-delay="160"
-            className="text-black/40 text-lg max-w-lg leading-relaxed"
-          >
-            企業の集客・ブランディング・採用を、テクノロジーと戦略で支援します。
-          </p>
         </div>
       </section>
 
