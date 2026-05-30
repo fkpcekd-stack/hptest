@@ -13,7 +13,7 @@ const companyInfo = [
   { label: "住所", value: "〒860-0833 熊本県熊本市南区平成２丁目5番11号 DKビル2F" },
   { label: "TEL", value: "096-321-8377" },
   { label: "FAX", value: "096-321-8370" },
-  { label: "従業員数", value: "15名" },
+  { label: "有料職業紹介許可番号", value: "43-ユ-300269" },
   { label: "資本金", value: "3,000,000円" },
   { label: "役員", value: "代表取締役　古賀大資" },
 ];

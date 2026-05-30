@@ -4,13 +4,17 @@ import { useEffect, useRef } from "react";
 interface Props {
   children: React.ReactNode;
   className?: string;
-  speed?: number;
+  distance?: number;
+  duration?: number;
+  threshold?: number;
 }
 
 export default function ParallaxNumber({
   children,
   className = "",
-  speed = 0.12,
+  distance = 120,
+  duration = 1.2,
+  threshold = 0.55,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -18,31 +22,25 @@ export default function ParallaxNumber({
     const el = ref.current;
     if (!el) return;
 
-    let raf = 0;
+    el.style.opacity = "0";
+    el.style.transform = `translateY(${distance}px)`;
+    el.style.transition = `opacity ${duration}s cubic-bezier(0.16,1,0.3,1), transform ${duration}s cubic-bezier(0.16,1,0.3,1)`;
 
-    const update = () => {
-      const rect = el.getBoundingClientRect();
-      const viewCenter = window.innerHeight / 2;
-      const elementCenter = rect.top + rect.height / 2;
-      const offset = (viewCenter - elementCenter) * speed;
-      el.style.transform = `translate3d(0, ${offset}px, 0)`;
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+          observer.unobserve(el);
+        });
+      },
+      { threshold, rootMargin: "0px 0px -8% 0px" },
+    );
 
-    const onScroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(update);
-    };
-
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      cancelAnimationFrame(raf);
-    };
-  }, [speed]);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [distance, duration, threshold]);
 
   return (
     <div ref={ref} className={`pointer-events-none ${className}`} aria-hidden>

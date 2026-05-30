@@ -13,27 +13,27 @@ const values = [
   {
     label: "Value 01",
     title: "判断を磨け",
-    text: "感覚で判断しない。成果は正しい判断による副産物だ。",
+    text: "感覚で判断しない。\n成果は正しい判断による副産物だ。",
   },
   {
     label: "Value 02",
     title: "構造を見ろ",
-    text: "表面の数字で判断しない。成果の裏側にある構造を捉えろ。",
+    text: "表面の数字で判断しない。\n成果の裏側にある構造を捉えろ。",
   },
   {
     label: "Value 03",
     title: "公平であれ",
-    text: "平等など無い。成果を基準に判断せよ。",
+    text: "平等など無い。\n成果を基準に判断せよ。",
   },
   {
     label: "Value 04",
     title: "変化を恐れるな",
-    text: "変化は目的ではない。成果に近づくための手段である。",
+    text: "変化は目的ではない。\n成果に近づくための手段である。",
   },
   {
     label: "Value 05",
     title: "没頭しろ",
-    text: "成果など気にならなくなる。そんな没頭を見つけろ。",
+    text: "成果など気にならなくなる。\nそんな没頭を見つけろ。",
   },
 ];
 
@@ -46,13 +46,10 @@ export default function PhilosophyPage() {
           <p
             data-reveal="up"
             data-delay="0"
-            className="text-[#4AB8D8] text-xs font-semibold uppercase tracking-[0.3em] mb-6"
+            className="text-[#4AB8D8] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-[0.05em] leading-none"
           >
             Mission Vision Value
           </p>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d0d0d] mb-8 leading-none tracking-tight">
-            <RevealChars lines={["行動指針"]} delay={120} charDelay={60} />
-          </h1>
         </div>
       </section>
 
@@ -64,7 +61,7 @@ export default function PhilosophyPage() {
               <p
                 data-reveal="up"
                 data-delay="0"
-                className="text-[#4AB8D8] text-xs font-semibold uppercase tracking-[0.3em] mb-6"
+                className="text-[#4AB8D8] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-[0.05em] mb-8 leading-none"
               >
                 Mission
               </p>
@@ -72,7 +69,10 @@ export default function PhilosophyPage() {
                 <RevealChars lines={["成果を", "設計する。"]} delay={80} charDelay={50} />
               </h2>
             </div>
-            <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-black/60 text-base sm:text-lg leading-loose">
+            <div
+              className="lg:col-span-7 lg:col-start-6 space-y-6 text-black/60 text-base sm:text-lg leading-loose"
+              style={{ fontFamily: "var(--font-zen-mincho), serif" }}
+            >
               <p data-reveal="up" data-delay="120">
                 私たちの仕事は、偶然のラッキーを待つことではない。本質的な「成果」を、自らの手で、設計することだ。
               </p>
@@ -98,7 +98,7 @@ export default function PhilosophyPage() {
               <p
                 data-reveal="up"
                 data-delay="0"
-                className="text-[#4AB8D8] text-xs font-semibold uppercase tracking-[0.3em] mb-6"
+                className="text-[#4AB8D8] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-[0.05em] mb-8 leading-none"
               >
                 Vision
               </p>
@@ -106,7 +106,10 @@ export default function PhilosophyPage() {
                 <RevealChars lines={["成果を", "すべての判断基準に。"]} delay={80} charDelay={50} />
               </h2>
             </div>
-            <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-white/60 text-base sm:text-lg leading-loose">
+            <div
+              className="lg:col-span-7 lg:col-start-6 space-y-6 text-white/60 text-base sm:text-lg leading-loose"
+              style={{ fontFamily: "var(--font-zen-mincho), serif" }}
+            >
               <p data-reveal="up" data-delay="120">
                 平等など無い。磨き上げた正しい判断と、その先にある結果が、私たちの信頼の拠り所だ。
               </p>
@@ -135,13 +138,10 @@ export default function PhilosophyPage() {
           <p
             data-reveal="up"
             data-delay="0"
-            className="text-[#4AB8D8] text-xs font-semibold uppercase tracking-[0.3em] mb-6"
+            className="text-[#4AB8D8] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-[0.05em] mb-16 leading-none"
           >
             Value
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] mb-16 leading-[1.15] tracking-tight">
-            <RevealChars lines={["私たちの行動指針"]} delay={80} charDelay={50} />
-          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 border-t border-black/8">
             {values.map((item, i) => {
               const isLast = i === values.length - 1;
@@ -151,17 +151,28 @@ export default function PhilosophyPage() {
                     key={item.label}
                     data-reveal="up"
                     data-delay={String(i * 80)}
-                    className="md:col-span-2 border-b border-black/8 bg-[#fafafa] py-20 sm:py-28 px-6 sm:px-10 text-center"
+                    className="relative overflow-hidden md:col-span-2 border-b border-black/8 bg-[#0d0d0d] py-20 sm:py-28 px-6 sm:px-10 text-center"
                   >
-                    <p className="text-[#4AB8D8] text-xs font-semibold uppercase tracking-[0.3em] mb-6">
-                      {item.label}
-                    </p>
-                    <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0d0d0d] mb-8 leading-[1.15] tracking-tight">
-                      <RevealChars lines={[item.title]} delay={120} charDelay={90} />
-                    </h3>
-                    <p className="text-black/55 text-base sm:text-lg leading-loose max-w-xl mx-auto">
-                      {item.text}
-                    </p>
+                    <ParallaxNumber className="absolute inset-0 flex items-center justify-center text-[18rem] sm:text-[26rem] lg:text-[32rem] font-black text-white/[0.06] leading-none select-none">
+                      05
+                    </ParallaxNumber>
+                    <div className="relative">
+                      <p className="text-[#4AB8D8] text-xs font-semibold uppercase tracking-[0.3em] mb-6">
+                        {item.label}
+                      </p>
+                      <h3
+                        className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white mb-10 leading-[1.15] tracking-wide"
+                        style={{ fontFamily: "var(--font-zen-mincho), serif" }}
+                      >
+                        <RevealChars lines={[item.title]} delay={120} charDelay={120} />
+                      </h3>
+                      <p
+                        className="text-white/75 text-base sm:text-lg leading-loose max-w-xl mx-auto whitespace-pre-line"
+                        style={{ fontFamily: "var(--font-zen-mincho), serif" }}
+                      >
+                        {item.text}
+                      </p>
+                    </div>
                   </div>
                 );
               }
@@ -182,7 +193,10 @@ export default function PhilosophyPage() {
                     <h3 className="text-2xl sm:text-3xl font-bold text-[#0d0d0d] mb-5">
                       {item.title}
                     </h3>
-                    <p className="text-black/45 text-sm sm:text-base leading-relaxed">
+                    <p
+                      className="text-black/45 text-sm sm:text-base leading-relaxed whitespace-pre-line"
+                      style={{ fontFamily: "var(--font-zen-mincho), serif" }}
+                    >
                       {item.text}
                     </p>
                   </div>
