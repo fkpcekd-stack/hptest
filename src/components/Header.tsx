@@ -56,7 +56,7 @@ export default function Header() {
             : "bg-transparent"
         }`}
       >
-        <div className="px-8 lg:px-16">
+        <div className="px-6 lg:px-12">
           <div className="flex items-center justify-between h-20">
             <Link href="/" className="flex-shrink-0">
               <Image
@@ -143,7 +143,7 @@ export default function Header() {
             : "opacity-0 pointer-events-none"
         }`}
       >
-        <nav className="px-8 lg:px-24 pt-20">
+        <nav className="px-6 lg:px-20 pt-20">
           {navLinks.map((link, i) => (
             <div key={link.href} className="border-b border-white/10 overflow-hidden">
               <Link
@@ -168,7 +168,7 @@ export default function Header() {
             </div>
           ))}
         </nav>
-        <div className="px-8 lg:px-24 mt-12">
+        <div className="px-6 lg:px-20 mt-12">
           <p className="text-white/20 text-xs tracking-widest">© 2024 株式会社DK</p>
         </div>
       </div>

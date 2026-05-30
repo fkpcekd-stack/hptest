@@ -42,7 +42,7 @@ export default function PhilosophyPage() {
     <>
       {/* Page Header */}
       <section className="pt-40 pb-20 bg-white hero-clip">
-        <div className="px-8 lg:px-16">
+        <div className="px-6 lg:px-12">
           <p
             data-reveal="up"
             data-delay="0"
@@ -58,7 +58,7 @@ export default function PhilosophyPage() {
 
       {/* Mission */}
       <section className="py-24 sm:py-32 bg-white border-t border-black/8">
-        <div className="px-8 lg:px-16">
+        <div className="px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-4">
               <p
@@ -92,7 +92,7 @@ export default function PhilosophyPage() {
 
       {/* Vision */}
       <section className="py-24 sm:py-32 bg-[#0d0d0d] text-white">
-        <div className="px-8 lg:px-16">
+        <div className="px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-4">
               <p
@@ -131,7 +131,7 @@ export default function PhilosophyPage() {
 
       {/* Value */}
       <section className="py-24 sm:py-32 bg-white">
-        <div className="px-8 lg:px-16">
+        <div className="px-6 lg:px-12">
           <p
             data-reveal="up"
             data-delay="0"

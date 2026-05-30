@@ -24,7 +24,7 @@ export default function AboutPage() {
     <>
       {/* Page Header */}
       <section className="pt-40 pb-20 bg-white hero-clip">
-        <div className="px-8 lg:px-16">
+        <div className="px-6 lg:px-12">
           <p
             data-reveal="up"
             data-delay="0"
@@ -40,7 +40,7 @@ export default function AboutPage() {
 
       {/* Company Info — main */}
       <section className="bg-white py-24">
-        <div className="px-8 lg:px-16 max-w-3xl mx-auto">
+        <div className="px-6 lg:px-12 max-w-3xl mx-auto">
           <div className="border-b border-black/8 pb-8 mb-0">
             <div data-reveal="up" data-delay="0">
               <p className="text-[#4AB8D8] text-xs tracking-[0.3em] uppercase mb-3">

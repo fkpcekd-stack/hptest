@@ -916,7 +916,7 @@ export default function ServiceSection({ services }: { services: Service[] }) {
       <div
         ref={(el) => { itemRefs.current[services.length] = el; }}
         data-delay="0"
-        className="px-8 lg:px-16 pt-32 pb-8"
+        className="px-6 lg:px-12 pt-32 pb-8"
         style={{ opacity: 0, transform: "translateY(24px)", transition: "opacity 0.7s ease, transform 0.7s ease" }}
       >
         <div className="flex items-end justify-between border-b border-black/8 pb-8">
@@ -944,7 +944,7 @@ export default function ServiceSection({ services }: { services: Service[] }) {
             style={{ opacity: 0, transform: "translateY(30px)", transition: `opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1)` }}
           >
             <div className={`grid grid-cols-1 md:grid-cols-2 min-h-[400px] ${isEven ? "md:[&>*:first-child]:order-2" : ""}`}>
-              <div className="flex flex-col justify-center px-8 lg:px-16 py-16 bg-white">
+              <div className="flex flex-col justify-center px-6 lg:px-12 py-16 bg-white">
                 <p className="text-[#4AB8D8] text-xs tracking-[0.3em] font-mono mb-6">
                   SERVICE {String(i + 1).padStart(2, "0")}
                 </p>
@@ -976,7 +976,7 @@ export default function ServiceSection({ services }: { services: Service[] }) {
         );
       })}
 
-      <div className="px-8 lg:px-16 py-12 border-t border-black/6 sm:hidden bg-white">
+      <div className="px-6 lg:px-12 py-12 border-t border-black/6 sm:hidden bg-white">
         <Link href="/services" className="flex items-center gap-2 text-black/35 hover:text-[#0d0d0d] text-sm transition-colors duration-200">
           すべて見る
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

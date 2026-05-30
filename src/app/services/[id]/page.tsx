@@ -37,7 +37,7 @@ export default async function ServiceDetailPage({ params }: Props) {
     <>
       {/* Hero */}
       <section className="pt-40 pb-0 bg-white">
-        <div className="px-8 lg:px-16 mb-16">
+        <div className="px-6 lg:px-12 mb-16">
           <Link
             href="/services"
             className="inline-flex items-center gap-2 text-xs text-black/35 hover:text-[#0d0d0d] transition-colors mb-10 group"
@@ -75,7 +75,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         <div
           data-reveal="fade"
           data-delay="200"
-          className="w-full bg-[#f7f8f9] border-t border-black/6 px-8 lg:px-16 py-16"
+          className="w-full bg-[#f7f8f9] border-t border-black/6 px-6 lg:px-12 py-16"
         >
           <div className="max-w-2xl mx-auto aspect-[4/3]">
             {Illust && <Illust />}
@@ -85,7 +85,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       {/* Detail content */}
       <section className="py-20 bg-white">
-        <div className="px-8 lg:px-16 max-w-screen-xl mx-auto">
+        <div className="px-6 lg:px-12 max-w-screen-xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-24">
             {/* Left: detail description */}
             <div>
@@ -161,7 +161,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             {prev ? (
               <Link
                 href={`/services/${prev.id}`}
-                className="px-8 lg:px-16 py-10 flex items-center gap-4 hover:bg-[#f7f8f9] transition-colors group"
+                className="px-6 lg:px-12 py-10 flex items-center gap-4 hover:bg-[#f7f8f9] transition-colors group"
               >
                 <svg className="w-5 h-5 text-black/25 group-hover:-translate-x-1 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
@@ -177,7 +177,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             {next ? (
               <Link
                 href={`/services/${next.id}`}
-                className="px-8 lg:px-16 py-10 flex items-center justify-end gap-4 hover:bg-[#f7f8f9] transition-colors group"
+                className="px-6 lg:px-12 py-10 flex items-center justify-end gap-4 hover:bg-[#f7f8f9] transition-colors group"
               >
                 <div className="text-right">
                   <p className="text-xs text-black/30 mb-1">次のサービス</p>

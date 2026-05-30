@@ -18,7 +18,7 @@ const links: Record<string, { href: string; label: string }[]> = {
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-black/6">
-      <div className="px-8 lg:px-16 py-12 sm:py-20">
+      <div className="px-6 lg:px-12 py-12 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-12 pb-12 sm:pb-16 border-b border-black/6">
           <div className="md:col-span-1">
             <Image

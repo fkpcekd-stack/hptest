@@ -18,7 +18,7 @@ export default function ServicesPage() {
     <>
       {/* Page Header */}
       <section className="pt-40 pb-20 bg-white hero-clip">
-        <div className="px-8 lg:px-16">
+        <div className="px-6 lg:px-12">
           <p
             data-reveal="up"
             data-delay="0"
@@ -43,7 +43,7 @@ export default function ServicesPage() {
               className={`border-b border-black/6 ${i === 0 ? "border-t" : ""}`}
             >
               <div
-                className={`px-8 lg:px-16 py-12 sm:py-20 lg:py-28 flex flex-col ${
+                className={`px-6 lg:px-12 py-12 sm:py-20 lg:py-28 flex flex-col ${
                   isEven ? "lg:flex-row-reverse" : "lg:flex-row"
                 } gap-8 sm:gap-12 lg:gap-20 items-center max-w-screen-xl mx-auto overflow-hidden`}
               >

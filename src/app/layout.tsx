@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
@@ -47,6 +47,12 @@ export const metadata: Metadata = {
       "株式会社DK（dkInc.）は、デジタル広告・SEOメディア・コンテンツ制作・有料職業紹介を通じて、企業の集客・ブランディング・売上拡大を支援します。",
   },
   robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
