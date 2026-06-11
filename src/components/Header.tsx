@@ -36,7 +36,8 @@ export default function Header() {
 
   useEffect(() => {
     const readTheme = () => {
-      setThemeDark(document.documentElement.getAttribute("data-theme") === "v3");
+      const t = document.documentElement.getAttribute("data-theme");
+      setThemeDark(t === "v2" || t === "v3");
     };
     readTheme();
     const observer = new MutationObserver(readTheme);

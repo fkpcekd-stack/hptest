@@ -5,9 +5,9 @@ type ThemeKey = "current" | "v1" | "v2" | "v3";
 
 const THEMES: { key: ThemeKey; label: string; swatch: string; fg: string }[] = [
   { key: "current", label: "現状", swatch: "#FFFFFF", fg: "#0d0d0d" },
-  { key: "v1", label: "変更1\nNavy", swatch: "#0E2238", fg: "#FFFFFF" },
-  { key: "v2", label: "変更2\nIvory", swatch: "#F8F5EE", fg: "#1A2330" },
-  { key: "v3", label: "変更3\nDark", swatch: "#0d0d0d", fg: "#4AB8D8" },
+  { key: "v1", label: "変更1\nNavy + Deep Cyan", swatch: "#0E2238", fg: "#2A8FB3" },
+  { key: "v2", label: "変更2\nDark", swatch: "#0d0d0d", fg: "#4AB8D8" },
+  { key: "v3", label: "変更3\nInk Navy", swatch: "#0B1B30", fg: "#4AB8D8" },
 ];
 
 const STORAGE_KEY = "dk-theme";
