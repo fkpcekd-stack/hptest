@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 const companyInfo = [
+  { label: "会社名", value: "株式会社ディーケー" },
   { label: "設立", value: "令和5年7月3日" },
   { label: "住所", value: "〒860-0833 熊本県熊本市南区平成２丁目5番11号 DKビル2F" },
   { label: "TEL", value: "096-321-8377" },
@@ -63,6 +64,13 @@ export default function AboutPage() {
                 </dt>
                 <dd className="text-sm text-black/65 leading-relaxed">
                   {item.value}
+                  {item.label === "TEL" && (
+                    <p className="mt-2 text-xs text-black/45 leading-relaxed">
+                      ※新規の営業に関するお電話は、一切お断りしております。
+                      <br />
+                      営業やご提案に関する御用件は、お問い合わせフォームよりご連絡ください。
+                    </p>
+                  )}
                 </dd>
               </div>
             ))}

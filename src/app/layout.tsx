@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import ScrollRevealInit from "@/components/ScrollRevealInit";
 import CustomCursor from "@/components/CustomCursor";
 import IntroAnimation from "@/components/IntroAnimation";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,7 +66,14 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ja" className={`${inter.variable} ${notoSansJP.variable} ${zenOldMincho.variable}`}>
+    <html lang="ja" suppressHydrationWarning className={`${inter.variable} ${notoSansJP.variable} ${zenOldMincho.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('dk-theme');if(t&&t!=='current'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body suppressHydrationWarning className="min-h-screen flex flex-col bg-white text-[#0F172A] font-sans antialiased">
         <ScrollRevealInit />
         <Header />
@@ -73,6 +81,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Footer />
         <CustomCursor />
         <IntroAnimation />
+        <ThemeSwitcher />
       </body>
     </html>
   );

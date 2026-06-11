@@ -333,3 +333,103 @@ body, body * {
   color: #0F172A;
   font-weight: 600;
 }
+
+/* ─── Service illustration panel ─────────────────────────────────── */
+/* Keeps a light panel under SVG illustrations so dark navy strokes   */
+/* remain visible regardless of the active theme.                      */
+.service-illust-panel { background-color: #F9FAFB; }
+[data-theme="v1"] .service-illust-panel { background-color: #F1F4F8 !important; }
+[data-theme="v2"] .service-illust-panel { background-color: #EFEBE2 !important; }
+[data-theme="v3"] .service-illust-panel { background-color: #0d0d0d !important; }
+/* Repaint dark navy SVG ink to white for dark theme so illustrations stay visible */
+[data-theme="v3"] .service-illust-panel svg [stroke="#1a1a2e"] { stroke: #FFFFFF !important; }
+[data-theme="v3"] .service-illust-panel svg [fill="#1a1a2e"] { fill: #FFFFFF !important; }
+/* Boost overall SVG brightness/saturation so low-opacity strokes remain readable on black */
+[data-theme="v3"] .service-illust-panel svg { filter: brightness(1.35) saturate(1.15); }
+
+/* ─── Theme variants (preview comparison) ─────────────────────────── */
+/* Toggle via data-theme attribute on <html>. Cyan accent is fixed.   */
+
+/* ── V1: Navy × Off-White ── */
+[data-theme="v1"] body { background: #FAFBFC; }
+[data-theme="v1"] .bg-white { background-color: #FAFBFC !important; }
+[data-theme="v1"] .bg-\[\#0d0d0d\] { background-color: #0E2238 !important; }
+[data-theme="v1"] .text-\[\#0d0d0d\] { color: #0E2238 !important; }
+[data-theme="v1"] .text-black\/20 { color: rgba(14,34,56,0.20) !important; }
+[data-theme="v1"] .text-black\/30 { color: rgba(14,34,56,0.30) !important; }
+[data-theme="v1"] .text-black\/35 { color: rgba(14,34,56,0.35) !important; }
+[data-theme="v1"] .text-black\/45 { color: rgba(14,34,56,0.45) !important; }
+[data-theme="v1"] .text-black\/50 { color: rgba(14,34,56,0.50) !important; }
+[data-theme="v1"] .text-black\/55 { color: rgba(14,34,56,0.55) !important; }
+[data-theme="v1"] .text-black\/65 { color: rgba(14,34,56,0.65) !important; }
+[data-theme="v1"] .border-black\/6 { border-color: rgba(14,34,56,0.06) !important; }
+[data-theme="v1"] .border-black\/8 { border-color: rgba(14,34,56,0.08) !important; }
+[data-theme="v1"] .border-black\/10 { border-color: rgba(14,34,56,0.10) !important; }
+[data-theme="v1"] .border-black\/20 { border-color: rgba(14,34,56,0.20) !important; }
+[data-theme="v1"] .bg-gray-50 { background-color: #F1F4F8 !important; }
+
+/* ── V2: Dark Slate × Ivory ── */
+[data-theme="v2"] body { background: #F8F5EE; }
+[data-theme="v2"] .bg-white { background-color: #F8F5EE !important; }
+[data-theme="v2"] .bg-\[\#0d0d0d\] { background-color: #1A2330 !important; }
+[data-theme="v2"] .text-\[\#0d0d0d\] { color: #1A2330 !important; }
+[data-theme="v2"] .text-black\/20 { color: rgba(26,35,48,0.20) !important; }
+[data-theme="v2"] .text-black\/30 { color: rgba(26,35,48,0.30) !important; }
+[data-theme="v2"] .text-black\/35 { color: rgba(26,35,48,0.35) !important; }
+[data-theme="v2"] .text-black\/45 { color: rgba(26,35,48,0.45) !important; }
+[data-theme="v2"] .text-black\/50 { color: rgba(26,35,48,0.50) !important; }
+[data-theme="v2"] .text-black\/55 { color: rgba(26,35,48,0.55) !important; }
+[data-theme="v2"] .text-black\/65 { color: rgba(26,35,48,0.65) !important; }
+[data-theme="v2"] .border-black\/6 { border-color: rgba(26,35,48,0.06) !important; }
+[data-theme="v2"] .border-black\/8 { border-color: rgba(26,35,48,0.08) !important; }
+[data-theme="v2"] .border-black\/10 { border-color: rgba(26,35,48,0.10) !important; }
+[data-theme="v2"] .border-black\/20 { border-color: rgba(26,35,48,0.20) !important; }
+[data-theme="v2"] .bg-gray-50 { background-color: #EFEBE2 !important; }
+
+/* ── V3: Full Dark × Cyan ── */
+[data-theme="v3"] body { background: #0d0d0d; color: #fff; }
+[data-theme="v3"] .bg-white { background-color: #0d0d0d !important; }
+[data-theme="v3"] .bg-\[\#0d0d0d\] { background-color: #000000 !important; }
+[data-theme="v3"] .text-\[\#0d0d0d\] { color: #FFFFFF !important; }
+[data-theme="v3"] .text-black\/20 { color: rgba(255,255,255,0.20) !important; }
+[data-theme="v3"] .text-black\/30 { color: rgba(255,255,255,0.30) !important; }
+[data-theme="v3"] .text-black\/35 { color: rgba(255,255,255,0.35) !important; }
+[data-theme="v3"] .text-black\/45 { color: rgba(255,255,255,0.45) !important; }
+[data-theme="v3"] .text-black\/50 { color: rgba(255,255,255,0.50) !important; }
+[data-theme="v3"] .text-black\/55 { color: rgba(255,255,255,0.55) !important; }
+[data-theme="v3"] .text-black\/65 { color: rgba(255,255,255,0.65) !important; }
+[data-theme="v3"] .border-black\/6 { border-color: rgba(255,255,255,0.06) !important; }
+[data-theme="v3"] .border-black\/8 { border-color: rgba(255,255,255,0.08) !important; }
+[data-theme="v3"] .border-black\/10 { border-color: rgba(255,255,255,0.10) !important; }
+[data-theme="v3"] .border-black\/20 { border-color: rgba(255,255,255,0.20) !important; }
+[data-theme="v3"] .bg-gray-50 { background-color: #1a1a1a !important; }
+[data-theme="v3"] .text-gray-300 { color: rgba(255,255,255,0.60) !important; }
+[data-theme="v3"] .text-gray-400 { color: rgba(255,255,255,0.45) !important; }
+[data-theme="v3"] .text-gray-500 { color: rgba(255,255,255,0.55) !important; }
+[data-theme="v3"] .text-gray-600 { color: rgba(255,255,255,0.65) !important; }
+[data-theme="v3"] .text-gray-700 { color: rgba(255,255,255,0.75) !important; }
+[data-theme="v3"] .border-gray-100 { border-color: rgba(255,255,255,0.08) !important; }
+[data-theme="v3"] .border-gray-200 { border-color: rgba(255,255,255,0.15) !important; }
+[data-theme="v3"] .border-gray-300 { border-color: rgba(255,255,255,0.22) !important; }
+/* Header: keep light text over dark page bg */
+[data-theme="v3"] header.bg-transparent { color: #fff; }
+
+/* Slate headings (used on contact / privacy / works) need theme-aware overrides */
+[data-theme="v1"] .text-\[\#0F172A\] { color: #0E2238 !important; }
+[data-theme="v2"] .text-\[\#0F172A\] { color: #1A2330 !important; }
+[data-theme="v3"] .text-\[\#0F172A\] { color: #FFFFFF !important; }
+[data-theme="v3"] .hover\:text-\[\#0F172A\]:hover { color: #FFFFFF !important; }
+
+/* Form inputs: become readable cards on dark page */
+[data-theme="v3"] input[type="text"],
+[data-theme="v3"] input[type="email"],
+[data-theme="v3"] input[type="tel"],
+[data-theme="v3"] input[type="number"],
+[data-theme="v3"] textarea {
+  background-color: #1a1a1a !important;
+  color: #FFFFFF !important;
+}
+[data-theme="v3"] input::placeholder,
+[data-theme="v3"] textarea::placeholder {
+  color: rgba(255,255,255,0.35) !important;
+}

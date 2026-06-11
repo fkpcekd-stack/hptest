@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/services", label: "サービス" },
   { href: "/about", label: "会社概要" },
   { href: "/philosophy", label: "MVV" },
+  { href: "/access", label: "アクセス" },
   { href: "/contact", label: "CONTACT" },
 ];
 
@@ -16,12 +17,14 @@ const headerNavLinks = [
   { href: "/services", label: "サービス" },
   { href: "/about", label: "会社概要" },
   { href: "/philosophy", label: "MVV" },
+  { href: "/access", label: "アクセス" },
   { href: "/contact", label: "CONTACT" },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [themeDark, setThemeDark] = useState(false);
   const pathname = usePathname();
   const isTop = pathname === "/";
 
@@ -29,6 +32,16 @@ export default function Header() {
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const readTheme = () => {
+      setThemeDark(document.documentElement.getAttribute("data-theme") === "v3");
+    };
+    readTheme();
+    const observer = new MutationObserver(readTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -42,8 +55,9 @@ export default function Header() {
 
   // ヒーローが白背景のため、ロゴは常にカラー表示
   // menuOpen時のみダークオーバーレイに合わせて白に切り替え
+  const isDarkPage = pathname === "/philosophy";
   const transparent = isTop && !scrolled && !menuOpen;
-  const isDark = menuOpen;
+  const isDark = menuOpen || themeDark || (isDarkPage && !scrolled);
 
   return (
     <>

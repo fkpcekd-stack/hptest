@@ -15,6 +15,8 @@ export default function CustomCursor() {
         dotRef.current.style.left = e.clientX + "px";
         dotRef.current.style.top  = e.clientY + "px";
       }
+      const el = document.elementFromPoint(e.clientX, e.clientY) as HTMLElement | null;
+      setHover(!!el?.closest("a, button"));
     };
 
     const setHover = (on: boolean) => {
@@ -36,21 +38,10 @@ export default function CustomCursor() {
       }
     };
 
-    const onOver = (e: MouseEvent) => {
-      if ((e.target as HTMLElement).closest("a, button")) setHover(true);
-    };
-    const onOut = (e: MouseEvent) => {
-      if ((e.target as HTMLElement).closest("a, button")) setHover(false);
-    };
-
     window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseover", onOver);
-    window.addEventListener("mouseout",  onOut);
 
     return () => {
       window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseover", onOver);
-      window.removeEventListener("mouseout",  onOut);
     };
   }, []);
 

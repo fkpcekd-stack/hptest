@@ -41,7 +41,7 @@ export default function PhilosophyPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="pt-40 pb-20 bg-white hero-clip">
+      <section className="pt-40 pb-20 bg-[#0d0d0d] hero-clip">
         <div className="px-6 lg:px-12">
           <p
             data-reveal="up"
@@ -54,7 +54,7 @@ export default function PhilosophyPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-24 sm:py-32 bg-white border-t border-black/8">
+      <section className="py-24 sm:py-32 bg-[#0d0d0d] text-white border-t border-white/8">
         <div className="px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-4">
@@ -65,12 +65,12 @@ export default function PhilosophyPage() {
               >
                 Mission
               </p>
-              <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] leading-[1.15] tracking-tight">
+              <h2 className="text-4xl sm:text-5xl font-bold text-white leading-[1.15] tracking-tight">
                 <RevealChars lines={["成果を", "設計する。"]} delay={80} charDelay={50} />
               </h2>
             </div>
             <div
-              className="lg:col-span-7 lg:col-start-6 space-y-6 text-black/60 text-base sm:text-lg leading-loose"
+              className="lg:col-span-7 lg:col-start-6 space-y-6 text-white/60 text-base sm:text-lg leading-loose"
               style={{ fontFamily: "var(--font-zen-mincho), serif" }}
             >
               <p data-reveal="up" data-delay="120">
@@ -82,7 +82,7 @@ export default function PhilosophyPage() {
               <p data-reveal="up" data-delay="240">
                 感覚だけで語るな。表面の数字で一喜一憂するな。変化を恐れず、物事の裏側にある構造を捉えにいこう。
               </p>
-              <p data-reveal="up" data-delay="300" className="text-[#0d0d0d] font-medium">
+              <p data-reveal="up" data-delay="300" className="text-white font-medium">
                 私たちは、あらゆるビジネスの現場に「成果が生まれる構造」をインストールする。
               </p>
             </div>
@@ -133,7 +133,7 @@ export default function PhilosophyPage() {
       </section>
 
       {/* Value */}
-      <section className="py-24 sm:py-32 bg-white">
+      <section className="py-24 sm:py-32 bg-[#0d0d0d] text-white">
         <p
           data-reveal="up"
           data-delay="0"
@@ -141,7 +141,7 @@ export default function PhilosophyPage() {
         >
           Value
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 border-t border-black/8">
+        <div className="grid grid-cols-1 md:grid-cols-2 border-t border-white/8">
             {values.map((item, i) => {
               const isLast = i === values.length - 1;
               if (isLast) {
@@ -150,7 +150,7 @@ export default function PhilosophyPage() {
                     key={item.label}
                     data-reveal="up"
                     data-delay={String(i * 80)}
-                    className="relative overflow-hidden md:col-span-2 border-b border-black/8 bg-[#0d0d0d] py-20 sm:py-28 px-3 sm:px-5 text-center"
+                    className="relative overflow-hidden md:col-span-2 border-b border-white/8 bg-[#0d0d0d] py-20 sm:py-28 px-3 sm:px-5 text-center"
                   >
                     <ParallaxNumber className="absolute inset-0 flex items-center justify-center text-[18rem] sm:text-[26rem] lg:text-[32rem] font-black text-white/[0.06] leading-none select-none">
                       05
@@ -180,20 +180,20 @@ export default function PhilosophyPage() {
                   key={item.label}
                   data-reveal="up"
                   data-delay={String(i * 80)}
-                  className="relative overflow-hidden py-12 sm:py-16 px-3 sm:px-5 border-b border-black/8 md:[&:nth-child(odd)]:border-r border-black/8"
+                  className="relative overflow-hidden py-12 sm:py-16 px-3 sm:px-5 border-b border-white/8 md:[&:nth-child(odd)]:border-r border-white/8"
                 >
-                  <ParallaxNumber className="absolute -right-6 -bottom-12 text-[12rem] sm:text-[15rem] font-black text-black/[0.05] leading-none select-none">
+                  <ParallaxNumber className="absolute -right-6 -bottom-12 text-[12rem] sm:text-[15rem] font-black text-white/[0.06] leading-none select-none">
                     0{i + 1}
                   </ParallaxNumber>
                   <div className="relative">
                     <p className="text-[#4AB8D8] text-xs font-semibold uppercase tracking-[0.25em] mb-4">
                       {item.label}
                     </p>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-[#0d0d0d] mb-5">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-5">
                       {item.title}
                     </h3>
                     <p
-                      className="text-black/45 text-sm sm:text-base leading-relaxed whitespace-pre-line"
+                      className="text-white/60 text-sm sm:text-base leading-relaxed whitespace-pre-line"
                       style={{ fontFamily: "var(--font-zen-mincho), serif" }}
                     >
                       {item.text}

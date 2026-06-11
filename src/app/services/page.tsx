@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { IllustC01, IllustC02, IllustC03, IllustC04, IllustC05 } from "@/components/BoldIllustrations";
 import { SERVICES } from "@/lib/servicesData";
@@ -40,7 +39,8 @@ export default function ServicesPage() {
           return (
             <div
               key={service.id}
-              className={`border-b border-black/6 ${i === 0 ? "border-t" : ""}`}
+              id={`service-${service.id}`}
+              className={`border-b border-black/6 scroll-mt-24 ${i === 0 ? "border-t" : ""}`}
             >
               <div
                 className={`px-6 lg:px-12 py-12 sm:py-20 lg:py-28 flex flex-col ${
@@ -105,22 +105,6 @@ export default function ServicesPage() {
                     ))}
                   </ul>
 
-                  <div data-reveal="up" data-delay="280">
-                    <Link
-                      href={`/services/${service.id}`}
-                      className="inline-flex items-center gap-3 text-sm font-semibold text-[#0d0d0d] border border-[#0d0d0d]/20 px-6 py-3 hover:border-[#0d0d0d] hover:bg-[#0d0d0d] hover:text-white transition-all duration-300 group"
-                    >
-                      詳細を見る
-                      <svg
-                        className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Link>
-                  </div>
                 </div>
               </div>
             </div>

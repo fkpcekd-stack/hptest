@@ -952,7 +952,7 @@ export default function ServiceSection({ services }: { services: Service[] }) {
                   {service.title}
                 </h3>
                 <p className="text-black/45 text-sm leading-relaxed max-w-md mb-8">{service.description}</p>
-                <Link href={`/services/${service.id}`} className="inline-flex items-center gap-3 text-black/35 hover:text-[#0d0d0d] text-sm transition-colors duration-200 group w-fit">
+                <Link href={`/services#service-${service.id}`} className="inline-flex items-center gap-3 text-black/35 hover:text-[#0d0d0d] text-sm transition-colors duration-200 group w-fit">
                   詳しく見る
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -962,7 +962,7 @@ export default function ServiceSection({ services }: { services: Service[] }) {
               <div
                 ref={(el) => { illusRefs.current[i] = el; }}
                 data-delay={String(i * 80 + 180)}
-                className={`flex items-center justify-center bg-gray-50 p-12 lg:p-16 min-h-[280px] overflow-hidden ${isEven ? "md:order-first" : ""}`}
+                className={`service-illust-panel flex items-center justify-center p-12 lg:p-16 min-h-[280px] overflow-hidden ${isEven ? "md:order-first" : ""}`}
                 style={{
                   opacity: 0,
                   transform: `translateX(${isEven ? "-80px" : "80px"})`,
