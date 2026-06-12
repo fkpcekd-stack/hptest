@@ -70,8 +70,9 @@ export default function CustomCursor() {
           opacity: 0,
           transform: "scale(0.5)",
           transition: "opacity 0.22s ease 0.1s, transform 0.22s ease 0.1s",
+          color: "#0d0d0d",
         }}
-        className="text-[#0d0d0d] text-[9px] font-semibold tracking-[0.28em] uppercase select-none whitespace-nowrap"
+        className="text-[9px] font-semibold tracking-[0.28em] uppercase select-none whitespace-nowrap"
       >
         VIEW
       </span>
