@@ -1,8 +1,10 @@
+import { Fragment } from "react";
 import { Metadata } from "next";
 import CTASection from "@/components/CTASection";
 import { IllustC01, IllustC02, IllustC03, IllustC04, IllustC05 } from "@/components/BoldIllustrations";
 import { SERVICES } from "@/lib/servicesData";
 import RevealChars from "@/components/RevealChars";
+import SectionDivider from "@/components/SectionDivider";
 
 export const metadata: Metadata = {
   title: "サービス",
@@ -32,15 +34,16 @@ export default function ServicesPage() {
       </section>
 
       {/* Services — alternating layout */}
-      <section className="bg-white">
+      <section className="services-page-list bg-white">
         {SERVICES.map((service, i) => {
           const Illust = illustrations[i];
           const isEven = i % 2 === 1;
           return (
+            <Fragment key={service.id}>
+              {i > 0 && <SectionDivider size="compact" />}
             <div
-              key={service.id}
               id={`service-${service.id}`}
-              className={`border-b border-black/6 scroll-mt-24 ${i === 0 ? "border-t" : ""}`}
+              className="scroll-mt-24"
             >
               <div
                 className={`px-6 lg:px-12 py-12 sm:py-20 lg:py-28 flex flex-col ${
@@ -55,7 +58,7 @@ export default function ServicesPage() {
                   data-duration="1s"
                   className="w-full lg:w-1/2 shrink-0"
                 >
-                  <div className="w-full aspect-[4/3] max-w-lg mx-auto">
+                  <div className="services-page-illust w-full aspect-[4/3] max-w-lg mx-auto">
                     <Illust />
                   </div>
                 </div>
@@ -108,8 +111,10 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
+            </Fragment>
           );
         })}
+        <SectionDivider size="compact" />
       </section>
 
       <CTASection />

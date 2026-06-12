@@ -1,11 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 
-type ThemeKey = "current" | "v1" | "v2" | "v3";
+type ThemeKey = "v2" | "v3";
 
 const THEMES: { key: ThemeKey; label: string; swatch: string; fg: string }[] = [
-  { key: "current", label: "現状", swatch: "#FFFFFF", fg: "#0d0d0d" },
-  { key: "v1", label: "変更1\nNavy + Deep Cyan", swatch: "#0E2238", fg: "#2A8FB3" },
   { key: "v2", label: "変更2\nDark", swatch: "#0d0d0d", fg: "#4AB8D8" },
   { key: "v3", label: "変更3\nInk Navy", swatch: "#0B1B30", fg: "#4AB8D8" },
 ];
@@ -13,19 +11,19 @@ const THEMES: { key: ThemeKey; label: string; swatch: string; fg: string }[] = [
 const STORAGE_KEY = "dk-theme";
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState<ThemeKey>("current");
+  const [theme, setTheme] = useState<ThemeKey>("v2");
   const [open, setOpen] = useState(true);
 
   useEffect(() => {
-    const saved = (localStorage.getItem(STORAGE_KEY) as ThemeKey | null) ?? "current";
+    const raw = localStorage.getItem(STORAGE_KEY);
+    const saved: ThemeKey = raw === "v3" ? "v3" : "v2";
     setTheme(saved);
     applyTheme(saved);
+    if (raw !== saved) localStorage.setItem(STORAGE_KEY, saved);
   }, []);
 
   const applyTheme = (t: ThemeKey) => {
-    const root = document.documentElement;
-    if (t === "current") root.removeAttribute("data-theme");
-    else root.setAttribute("data-theme", t);
+    document.documentElement.setAttribute("data-theme", t);
   };
 
   const select = (t: ThemeKey) => {

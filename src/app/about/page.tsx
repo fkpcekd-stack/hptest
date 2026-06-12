@@ -40,7 +40,7 @@ export default function AboutPage() {
       </section>
 
       {/* Company Info — main */}
-      <section className="bg-white py-24">
+      <section className="about-page-content bg-white py-24">
         <div className="px-6 lg:px-12 max-w-3xl mx-auto">
           <div className="border-b border-black/8 pb-8 mb-0">
             <div data-reveal="up" data-delay="0">

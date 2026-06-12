@@ -70,7 +70,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('dk-theme');if(t&&t!=='current'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();`,
+            __html: `(function(){try{var t=localStorage.getItem('dk-theme');var v=(t==='v3')?'v3':'v2';document.documentElement.setAttribute('data-theme',v);}catch(e){document.documentElement.setAttribute('data-theme','v2');}})();`,
           }}
         />
       </head>

@@ -70,7 +70,7 @@ export default function PhilosophyPage() {
               </h2>
             </div>
             <div
-              className="lg:col-span-7 lg:col-start-6 space-y-6 text-white/60 text-base sm:text-lg leading-loose"
+              className="philosophy-mission-body lg:col-span-7 lg:col-start-6 space-y-6 text-white/60 text-base sm:text-lg leading-loose"
               style={{ fontFamily: "var(--font-zen-mincho), serif" }}
             >
               <p data-reveal="up" data-delay="120">
@@ -107,7 +107,7 @@ export default function PhilosophyPage() {
               </h2>
             </div>
             <div
-              className="lg:col-span-7 lg:col-start-6 space-y-6 text-white/60 text-base sm:text-lg leading-loose"
+              className="philosophy-vision-body lg:col-span-7 lg:col-start-6 space-y-6 text-white/60 text-base sm:text-lg leading-loose"
               style={{ fontFamily: "var(--font-zen-mincho), serif" }}
             >
               <p data-reveal="up" data-delay="120">
@@ -141,7 +141,7 @@ export default function PhilosophyPage() {
         >
           Value
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 border-t border-white/8">
+        <div className="philosophy-value-grid grid grid-cols-1 md:grid-cols-2 border-t border-white/8">
             {values.map((item, i) => {
               const isLast = i === values.length - 1;
               if (isLast) {

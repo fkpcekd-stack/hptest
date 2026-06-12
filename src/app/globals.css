@@ -334,52 +334,139 @@ body, body * {
   font-weight: 600;
 }
 
+/* ─── Section divider (cyan accents drawn left → right on view) ──── */
+.section-divider-line {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.is-drawn .section-divider-line { transform: scaleX(1); }
+
 /* ─── Service illustration panel ─────────────────────────────────── */
 /* Keeps a light panel under SVG illustrations so dark navy strokes   */
 /* remain visible regardless of the active theme.                      */
 .service-illust-panel { background-color: #F9FAFB; }
-[data-theme="v1"] .service-illust-panel { background-color: #F1F4F8 !important; }
 [data-theme="v2"] .service-illust-panel { background-color: #0d0d0d !important; }
 [data-theme="v3"] .service-illust-panel { background-color: #0B1B30 !important; }
 /* Repaint dark navy SVG ink to white for dark themes so illustrations stay visible */
 [data-theme="v2"] .service-illust-panel svg [stroke="#1a1a2e"],
-[data-theme="v3"] .service-illust-panel svg [stroke="#1a1a2e"] { stroke: #FFFFFF !important; }
+[data-theme="v2"] .hero-illus-animate svg [stroke="#1a1a2e"],
+[data-theme="v2"] .services-page-illust svg [stroke="#1a1a2e"],
+[data-theme="v3"] .service-illust-panel svg [stroke="#1a1a2e"],
+[data-theme="v3"] .hero-illus-animate svg [stroke="#1a1a2e"],
+[data-theme="v3"] .services-page-illust svg [stroke="#1a1a2e"] { stroke: #FFFFFF !important; }
 [data-theme="v2"] .service-illust-panel svg [fill="#1a1a2e"],
-[data-theme="v3"] .service-illust-panel svg [fill="#1a1a2e"] { fill: #FFFFFF !important; }
+[data-theme="v2"] .hero-illus-animate svg [fill="#1a1a2e"],
+[data-theme="v2"] .services-page-illust svg [fill="#1a1a2e"],
+[data-theme="v3"] .service-illust-panel svg [fill="#1a1a2e"],
+[data-theme="v3"] .hero-illus-animate svg [fill="#1a1a2e"],
+[data-theme="v3"] .services-page-illust svg [fill="#1a1a2e"] { fill: #FFFFFF !important; }
+/* Repaint cyan accents to white too so illustrations are white-based */
+[data-theme="v2"] .service-illust-panel svg [stroke="#4AB8D8"],
+[data-theme="v2"] .hero-illus-animate svg [stroke="#4AB8D8"],
+[data-theme="v2"] .services-page-illust svg [stroke="#4AB8D8"],
+[data-theme="v3"] .service-illust-panel svg [stroke="#4AB8D8"],
+[data-theme="v3"] .hero-illus-animate svg [stroke="#4AB8D8"],
+[data-theme="v3"] .services-page-illust svg [stroke="#4AB8D8"] { stroke: #FFFFFF !important; }
+[data-theme="v2"] .service-illust-panel svg [fill="#4AB8D8"],
+[data-theme="v2"] .hero-illus-animate svg [fill="#4AB8D8"],
+[data-theme="v2"] .services-page-illust svg [fill="#4AB8D8"],
+[data-theme="v3"] .service-illust-panel svg [fill="#4AB8D8"],
+[data-theme="v3"] .hero-illus-animate svg [fill="#4AB8D8"],
+[data-theme="v3"] .services-page-illust svg [fill="#4AB8D8"] { fill: #FFFFFF !important; }
 /* Boost overall SVG brightness/saturation so low-opacity strokes remain readable */
 [data-theme="v2"] .service-illust-panel svg,
-[data-theme="v3"] .service-illust-panel svg { filter: brightness(1.35) saturate(1.15); }
+[data-theme="v2"] .hero-illus-animate svg,
+[data-theme="v2"] .services-page-illust svg,
+[data-theme="v3"] .service-illust-panel svg,
+[data-theme="v3"] .hero-illus-animate svg,
+[data-theme="v3"] .services-page-illust svg { filter: brightness(1.35) saturate(1.15); }
 
 /* ─── Theme variants (preview comparison) ─────────────────────────── */
 /* Toggle via data-theme attribute on <html>. Cyan accent is fixed.   */
 
-/* ── V1: Navy × White × Deep Cyan ── */
-[data-theme="v1"] body { background: #FFFFFF; }
-[data-theme="v1"] .bg-white { background-color: #FFFFFF !important; }
-[data-theme="v1"] .bg-\[\#0d0d0d\] { background-color: #0E2238 !important; }
-[data-theme="v1"] .text-\[\#0d0d0d\] { color: #0E2238 !important; }
-[data-theme="v1"] .text-black\/20 { color: rgba(14,34,56,0.20) !important; }
-[data-theme="v1"] .text-black\/30 { color: rgba(14,34,56,0.30) !important; }
-[data-theme="v1"] .text-black\/35 { color: rgba(14,34,56,0.35) !important; }
-[data-theme="v1"] .text-black\/45 { color: rgba(14,34,56,0.45) !important; }
-[data-theme="v1"] .text-black\/50 { color: rgba(14,34,56,0.50) !important; }
-[data-theme="v1"] .text-black\/55 { color: rgba(14,34,56,0.55) !important; }
-[data-theme="v1"] .text-black\/65 { color: rgba(14,34,56,0.65) !important; }
-[data-theme="v1"] .border-black\/6 { border-color: rgba(14,34,56,0.06) !important; }
-[data-theme="v1"] .border-black\/8 { border-color: rgba(14,34,56,0.08) !important; }
-[data-theme="v1"] .border-black\/10 { border-color: rgba(14,34,56,0.10) !important; }
-[data-theme="v1"] .border-black\/20 { border-color: rgba(14,34,56,0.20) !important; }
-[data-theme="v1"] .bg-gray-50 { background-color: #F4F6F9 !important; }
-/* Deepen the cyan accent specifically for V1 */
-[data-theme="v1"] .text-\[\#4AB8D8\] { color: #2A8FB3 !important; }
-[data-theme="v1"] .bg-\[\#4AB8D8\] { background-color: #2A8FB3 !important; }
-[data-theme="v1"] .border-\[\#4AB8D8\]\/30 { border-color: rgba(42,143,179,0.30) !important; }
-[data-theme="v1"] .focus\:border-\[\#4AB8D8\]:focus { border-color: #2A8FB3 !important; }
-[data-theme="v1"] .focus\:ring-\[\#4AB8D8\]:focus { --tw-ring-color: #2A8FB3 !important; }
-[data-theme="v1"] .focus\:ring-\[\#4AB8D8\]\/30:focus { --tw-ring-color: rgba(42,143,179,0.30) !important; }
-/* Repaint SVG illustration cyan to the deeper tone */
-[data-theme="v1"] .service-illust-panel svg [stroke="#4AB8D8"] { stroke: #2A8FB3 !important; }
-[data-theme="v1"] .service-illust-panel svg [fill="#4AB8D8"] { fill: #2A8FB3 !important; }
+/* ── V2 / V3: paint header & footer cyan, push Vision section onto page bg ── */
+[data-theme="v2"] header.bg-white,
+[data-theme="v2"] header.bg-transparent,
+[data-theme="v2"] header.bg-\[\#0d0d0d\],
+[data-theme="v3"] header.bg-white,
+[data-theme="v3"] header.bg-transparent,
+[data-theme="v3"] header.bg-\[\#0d0d0d\] {
+  background-color: #4AB8D8 !important;
+}
+[data-theme="v2"] footer.bg-\[\#0d0d0d\],
+[data-theme="v3"] footer.bg-\[\#0d0d0d\] {
+  background-color: #4AB8D8 !important;
+}
+/* Footer link hover becomes white so the cyan-on-cyan does not vanish */
+[data-theme="v2"] footer .hover\:text-\[\#4AB8D8\]:hover,
+[data-theme="v3"] footer .hover\:text-\[\#4AB8D8\]:hover {
+  color: #FFFFFF !important;
+}
+/* Vision section blends into the dark page bg in v2/v3 instead of staying cyan */
+[data-theme="v2"] .vision-section { background-color: #0d0d0d !important; }
+[data-theme="v3"] .vision-section { background-color: #0B1B30 !important; }
+
+/* CTA section also blends with the dark page bg; keep the inner white button readable */
+[data-theme="v2"] .cta-section { background-color: #0d0d0d !important; }
+[data-theme="v3"] .cta-section { background-color: #0B1B30 !important; }
+[data-theme="v2"] .cta-section .bg-white,
+[data-theme="v3"] .cta-section .bg-white { background-color: #FFFFFF !important; }
+[data-theme="v2"] .cta-section .text-\[\#0d0d0d\],
+[data-theme="v3"] .cta-section .text-\[\#0d0d0d\] { color: #0d0d0d !important; }
+
+/* TOP page Hero: "Digital Marketing" label and description text turn white on dark themes */
+[data-theme="v2"] .hero-animate.text-black\/30,
+[data-theme="v3"] .hero-animate.text-black\/30 { color: #FFFFFF !important; }
+[data-theme="v2"] .hero-animate.text-black\/55,
+[data-theme="v3"] .hero-animate.text-black\/55 { color: #FFFFFF !important; }
+
+/* TOP page Services section: cyan headings/labels become white (hero is left untouched) */
+[data-theme="v2"] .services-clip .text-\[\#4AB8D8\],
+[data-theme="v3"] .services-clip .text-\[\#4AB8D8\] { color: #FFFFFF !important; }
+/* Service description and "詳しく見る" / "すべて見る" links also turn full white for readability */
+[data-theme="v2"] .services-clip .text-black\/45,
+[data-theme="v3"] .services-clip .text-black\/45 { color: #FFFFFF !important; }
+[data-theme="v2"] .services-clip .text-black\/35,
+[data-theme="v3"] .services-clip .text-black\/35 { color: #FFFFFF !important; }
+[data-theme="v2"] .services-clip .text-black\/30,
+[data-theme="v3"] .services-clip .text-black\/30 { color: #FFFFFF !important; }
+
+/* /services page list: description, detail, features turn full white on dark themes */
+[data-theme="v2"] .services-page-list .text-black\/50,
+[data-theme="v3"] .services-page-list .text-black\/50 { color: #FFFFFF !important; }
+[data-theme="v2"] .services-page-list .text-black\/35,
+[data-theme="v3"] .services-page-list .text-black\/35 { color: #FFFFFF !important; }
+[data-theme="v2"] .services-page-list .text-black\/55,
+[data-theme="v3"] .services-page-list .text-black\/55 { color: #FFFFFF !important; }
+
+/* /philosophy Mission & Vision body paragraphs become full white on dark themes */
+[data-theme="v2"] .philosophy-mission-body,
+[data-theme="v2"] .philosophy-vision-body,
+[data-theme="v2"] .philosophy-vision-body .text-white\/80,
+[data-theme="v3"] .philosophy-mission-body,
+[data-theme="v3"] .philosophy-vision-body,
+[data-theme="v3"] .philosophy-vision-body .text-white\/80 { color: #FFFFFF !important; }
+
+/* /philosophy Value cards body text becomes full white on dark themes */
+[data-theme="v2"] .philosophy-value-grid .text-white\/60,
+[data-theme="v2"] .philosophy-value-grid .text-white\/75,
+[data-theme="v3"] .philosophy-value-grid .text-white\/60,
+[data-theme="v3"] .philosophy-value-grid .text-white\/75 { color: #FFFFFF !important; }
+
+/* /about and /access pages: all muted text turns white on dark themes */
+[data-theme="v2"] .about-page-content .text-black\/35,
+[data-theme="v2"] .about-page-content .text-black\/45,
+[data-theme="v2"] .about-page-content .text-black\/65,
+[data-theme="v2"] .access-page-content .text-black\/35,
+[data-theme="v2"] .access-page-content .text-black\/45,
+[data-theme="v2"] .access-page-content .text-black\/65,
+[data-theme="v3"] .about-page-content .text-black\/35,
+[data-theme="v3"] .about-page-content .text-black\/45,
+[data-theme="v3"] .about-page-content .text-black\/65,
+[data-theme="v3"] .access-page-content .text-black\/35,
+[data-theme="v3"] .access-page-content .text-black\/45,
+[data-theme="v3"] .access-page-content .text-black\/65 { color: #FFFFFF !important; }
 
 /* ── V2: Full Dark × Cyan ── */
 [data-theme="v2"] body { background: #0d0d0d; color: #fff; }
@@ -438,7 +525,6 @@ body, body * {
 [data-theme="v3"] header.bg-transparent { color: #fff; }
 
 /* Slate headings (used on contact / privacy / works) need theme-aware overrides */
-[data-theme="v1"] .text-\[\#0F172A\] { color: #0E2238 !important; }
 [data-theme="v2"] .text-\[\#0F172A\],
 [data-theme="v3"] .text-\[\#0F172A\] { color: #FFFFFF !important; }
 [data-theme="v2"] .hover\:text-\[\#0F172A\]:hover,

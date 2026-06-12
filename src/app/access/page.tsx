@@ -35,7 +35,7 @@ export default function AccessPage() {
       </section>
 
       {/* Map */}
-      <section className="bg-white pb-16">
+      <section className="access-page-content bg-white pb-16">
         <div className="px-6 lg:px-12 max-w-5xl mx-auto">
           <div
             data-reveal="up"
@@ -68,7 +68,7 @@ export default function AccessPage() {
       </section>
 
       {/* Contact Info */}
-      <section className="bg-white pb-24">
+      <section className="access-page-content bg-white pb-24">
         <div className="px-6 lg:px-12 max-w-3xl mx-auto">
           <dl data-reveal="up" data-delay="80">
             <div className="grid grid-cols-1 sm:grid-cols-[160px_1fr] border-t border-b border-black/6 py-6 gap-2 sm:gap-8">

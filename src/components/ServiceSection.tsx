@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
+import SectionDivider from "@/components/SectionDivider";
 
 const C  = "#1a1a2e";
 const A  = "#4AB8D8";
@@ -936,11 +937,11 @@ export default function ServiceSection({ services }: { services: Service[] }) {
       {services.map((service, i) => {
         const isEven = i % 2 === 1;
         return (
+          <React.Fragment key={service.id}>
+            {i > 0 && <SectionDivider size="compact" />}
           <div
-            key={service.id}
             ref={(el) => { itemRefs.current[i] = el; }}
             data-delay={String(i * 80)}
-            className="border-t border-black/6"
             style={{ opacity: 0, transform: "translateY(30px)", transition: `opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1)` }}
           >
             <div className={`grid grid-cols-1 md:grid-cols-2 min-h-[400px] ${isEven ? "md:[&>*:first-child]:order-2" : ""}`}>
@@ -973,8 +974,11 @@ export default function ServiceSection({ services }: { services: Service[] }) {
               </div>
             </div>
           </div>
+          </React.Fragment>
         );
       })}
+
+      <SectionDivider size="compact" />
 
       <div className="px-6 lg:px-12 py-12 border-t border-black/6 sm:hidden bg-white">
         <Link href="/services" className="flex items-center gap-2 text-black/35 hover:text-[#0d0d0d] text-sm transition-colors duration-200">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import ServiceSectionLoader from "@/components/ServiceSectionLoader";
 import HeroIllustrationLoader from "@/components/HeroIllustrationLoader";
+import SectionDivider from "@/components/SectionDivider";
 import { getServicesList } from "@/lib/microcms";
 
 const fallbackServices = [
@@ -97,8 +98,10 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* VISION */}
-      <section className="bg-[#4AB8D8] text-white py-24 sm:py-32 lg:py-40 overflow-hidden relative">
+      <section className="vision-section bg-[#4AB8D8] text-white py-24 sm:py-32 lg:py-40 overflow-hidden relative">
         <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{
           backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
           backgroundSize: "32px 32px",
@@ -153,9 +156,12 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* SERVICES */}
       <ServiceSectionLoader services={services} />
 
+      <SectionDivider />
 
       <CTASection />
     </>
