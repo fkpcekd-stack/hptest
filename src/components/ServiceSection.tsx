@@ -920,17 +920,9 @@ export default function ServiceSection({ services }: { services: Service[] }) {
         className="px-6 lg:px-12 pt-32 pb-8"
         style={{ opacity: 0, transform: "translateY(24px)", transition: "opacity 0.7s ease, transform 0.7s ease" }}
       >
-        <div className="flex items-end justify-between border-b border-black/8 pb-8">
-          <div>
-            <p className="text-[#4AB8D8] text-xs tracking-[0.3em] uppercase mb-3">Services</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] tracking-tight">サービス</h2>
-          </div>
-          <Link href="/services" className="hidden sm:flex items-center gap-2 text-black/30 hover:text-[#0d0d0d] text-sm transition-colors duration-200 group">
-            すべて見る
-            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </Link>
+        <div className="border-b border-black/8 pb-8">
+          <p className="text-[#4AB8D8] text-xs tracking-[0.3em] uppercase mb-3">Services</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] tracking-tight">サービス</h2>
         </div>
       </div>
 
@@ -979,15 +971,6 @@ export default function ServiceSection({ services }: { services: Service[] }) {
       })}
 
       <SectionDivider size="compact" />
-
-      <div className="px-6 lg:px-12 py-12 border-t border-black/6 sm:hidden bg-white">
-        <Link href="/services" className="flex items-center gap-2 text-black/35 hover:text-[#0d0d0d] text-sm transition-colors duration-200">
-          すべて見る
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </Link>
-      </div>
     </section>
   );
 }
