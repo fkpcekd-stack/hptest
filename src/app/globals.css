@@ -342,6 +342,12 @@ body, body * {
 }
 .is-drawn .section-divider-line { transform: scaleX(1); }
 
+.section-divider-triangle-wrap {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.is-drawn .section-divider-triangle-wrap { clip-path: inset(0 0 0 0); }
+
 /* ─── Service illustration panel ─────────────────────────────────── */
 /* Keeps a light panel under SVG illustrations so dark navy strokes   */
 /* remain visible regardless of the active theme.                      */
