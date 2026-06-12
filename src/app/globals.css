@@ -164,7 +164,7 @@ body {
 .services-clip {
   background: #f7f8f9;
   margin-top: -4.5vw;
-  clip-path: polygon(0 4.5%, 100% 0, 100% 95.5%, 0 100%);
+  clip-path: polygon(0 4.5%, 100% 0, 100% 100%, 0 100%);
   padding-top: 7vw;
   padding-bottom: 7vw;
   position: relative;
