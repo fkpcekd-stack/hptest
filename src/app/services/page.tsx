@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import CTASection from "@/components/CTASection";
 import { IllustC01, IllustC02, IllustC03, IllustC04, IllustC05 } from "@/components/BoldIllustrations";
 import { SERVICES } from "@/lib/servicesData";
-import RevealChars from "@/components/RevealChars";
 import SectionDivider from "@/components/SectionDivider";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export default function ServicesPage() {
             Services
           </p>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d0d0d] mb-8 leading-none tracking-tight">
-            <RevealChars lines={["サービス"]} delay={120} charDelay={60} />
+            サービス
           </h1>
         </div>
       </section>
@@ -40,7 +39,7 @@ export default function ServicesPage() {
           const isEven = i % 2 === 1;
           return (
             <Fragment key={service.id}>
-              {i > 0 && <SectionDivider size="compact" />}
+              {i > 0 && <SectionDivider size="compact" index={i - 1} />}
             <div
               id={`service-${service.id}`}
               className="scroll-mt-24"
@@ -70,7 +69,7 @@ export default function ServicesPage() {
                     data-delay="60"
                     className="text-[#4AB8D8] text-xs font-semibold uppercase tracking-[0.3em] mb-4"
                   >
-                    0{i + 1}
+                    SERVICE 0{i + 1}
                   </p>
                   <h2
                     data-reveal="up"
@@ -114,7 +113,7 @@ export default function ServicesPage() {
             </Fragment>
           );
         })}
-        <SectionDivider size="compact" />
+        <SectionDivider size="compact" index={SERVICES.length - 1} />
       </section>
 
       <CTASection />

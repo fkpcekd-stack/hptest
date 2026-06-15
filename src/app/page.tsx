@@ -49,18 +49,18 @@ export default async function HomePage() {
       {/* HERO */}
       <section className="relative lg:min-h-screen bg-white overflow-hidden grid grid-cols-1 lg:grid-cols-2 hero-clip">
         {/* Left: text */}
-        <div className="relative z-10 flex flex-col justify-start lg:justify-end pt-24 sm:pt-28 pb-4 sm:pb-6 lg:pt-36 lg:pb-24 px-6 lg:px-12">
-          <p className="hero-animate text-black/30 text-xs font-medium tracking-[0.3em] uppercase mb-4 sm:mb-8" style={{ animationDelay: "0ms" }}>
+        <div className="relative z-10 flex flex-col justify-start lg:justify-end pt-36 sm:pt-40 pb-4 sm:pb-6 lg:pt-44 lg:pb-24 px-6 lg:px-12">
+          <p className="hero-animate text-[#4AB8D8] text-xs font-medium tracking-[0.3em] uppercase mb-4 sm:mb-8" style={{ animationDelay: "0ms" }}>
             Digital Marketing
           </p>
           <h1 className="text-[clamp(3rem,13vw,6rem)] lg:text-[clamp(3rem,7.5vw,8.5rem)] font-bold text-[#0d0d0d] leading-[1.02] tracking-tight mb-6 sm:mb-10">
             <span className="block overflow-hidden pb-[0.05em]">
-              <span className="hero-mask-line" style={{ animationDelay: "180ms" }}>
+              <span className="hero-mask-line text-[#4AB8D8]" style={{ animationDelay: "180ms" }}>
                 成果を
               </span>
             </span>
             <span className="block overflow-hidden pb-[0.05em]">
-              <span className="hero-mask-line text-[#4AB8D8]" style={{ animationDelay: "380ms" }}>
+              <span className="hero-mask-line" style={{ animationDelay: "380ms" }}>
                 設計する。
               </span>
             </span>
@@ -98,7 +98,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <SectionDivider />
+      <SectionDivider index={0} />
 
       {/* VISION */}
       <section className="vision-section bg-[#4AB8D8] text-white py-24 sm:py-32 lg:py-40 overflow-hidden relative">
@@ -112,14 +112,14 @@ export default async function HomePage() {
               <p
                 data-reveal="up"
                 data-delay="0"
-                className="text-white/70 text-xs font-semibold uppercase tracking-[0.3em] mb-8"
+                className="text-[#4AB8D8] text-xs font-semibold uppercase tracking-[0.3em] mb-8"
               >
                 Vision
               </p>
               <h2
                 data-reveal="up"
                 data-delay="80"
-                className="text-[clamp(2.5rem,6vw,6rem)] font-bold leading-[1.05] tracking-tight"
+                className="text-[clamp(2rem,6vw,6rem)] font-bold leading-[1.05] tracking-tight whitespace-nowrap"
               >
                 成果を
                 <br />
@@ -156,12 +156,10 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <SectionDivider />
+      <SectionDivider index={1} />
 
       {/* SERVICES */}
       <ServiceSectionLoader services={services} />
-
-      <SectionDivider />
 
       <CTASection />
     </>

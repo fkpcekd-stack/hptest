@@ -334,18 +334,20 @@ body, body * {
   font-weight: 600;
 }
 
-/* ─── Section divider (cyan accents drawn left → right on view) ──── */
+/* ─── Section divider (cyan accents drawn on view — direction alternates) */
 .section-divider-line {
   transform: scaleX(0);
-  transform-origin: left center;
   transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.section-divider-line--ltr { transform-origin: left center; }
+.section-divider-line--rtl { transform-origin: right center; }
 .is-drawn .section-divider-line { transform: scaleX(1); }
 
 .section-divider-triangle-wrap {
-  clip-path: inset(0 100% 0 0);
   transition: clip-path 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.section-divider-triangle-wrap--ltr { clip-path: inset(0 100% 0 0); }
+.section-divider-triangle-wrap--rtl { clip-path: inset(0 0 0 100%); }
 .is-drawn .section-divider-triangle-wrap { clip-path: inset(0 0 0 0); }
 
 /* ─── Service illustration panel ─────────────────────────────────── */
@@ -427,9 +429,6 @@ body, body * {
 [data-theme="v2"] .hero-animate.text-black\/55,
 [data-theme="v3"] .hero-animate.text-black\/55 { color: #FFFFFF !important; }
 
-/* TOP page Services section: cyan headings/labels become white (hero is left untouched) */
-[data-theme="v2"] .services-clip .text-\[\#4AB8D8\],
-[data-theme="v3"] .services-clip .text-\[\#4AB8D8\] { color: #FFFFFF !important; }
 /* Service description and "詳しく見る" / "すべて見る" links also turn full white for readability */
 [data-theme="v2"] .services-clip .text-black\/45,
 [data-theme="v3"] .services-clip .text-black\/45 { color: #FFFFFF !important; }
@@ -535,6 +534,27 @@ body, body * {
 [data-theme="v3"] .text-\[\#0F172A\] { color: #FFFFFF !important; }
 [data-theme="v2"] .hover\:text-\[\#0F172A\]:hover,
 [data-theme="v3"] .hover\:text-\[\#0F172A\]:hover { color: #FFFFFF !important; }
+
+/* /contact page: keep page bg dark but force form fields to white with dark text */
+[data-theme="v2"] .contact-page input[type="text"],
+[data-theme="v2"] .contact-page input[type="email"],
+[data-theme="v2"] .contact-page input[type="tel"],
+[data-theme="v2"] .contact-page input[type="number"],
+[data-theme="v2"] .contact-page textarea,
+[data-theme="v3"] .contact-page input[type="text"],
+[data-theme="v3"] .contact-page input[type="email"],
+[data-theme="v3"] .contact-page input[type="tel"],
+[data-theme="v3"] .contact-page input[type="number"],
+[data-theme="v3"] .contact-page textarea {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+[data-theme="v2"] .contact-page input::placeholder,
+[data-theme="v2"] .contact-page textarea::placeholder,
+[data-theme="v3"] .contact-page input::placeholder,
+[data-theme="v3"] .contact-page textarea::placeholder {
+  color: rgba(15,23,42,0.40) !important;
+}
 
 /* Form inputs: become readable cards on dark page */
 [data-theme="v2"] input[type="text"],

@@ -9,7 +9,6 @@ const navLinks = [
   { href: "/services", label: "サービス" },
   { href: "/about", label: "会社概要" },
   { href: "/philosophy", label: "MVV" },
-  { href: "/access", label: "アクセス" },
   { href: "/contact", label: "CONTACT" },
 ];
 
@@ -17,7 +16,6 @@ const headerNavLinks = [
   { href: "/services", label: "サービス" },
   { href: "/about", label: "会社概要" },
   { href: "/philosophy", label: "MVV" },
-  { href: "/access", label: "アクセス" },
   { href: "/contact", label: "CONTACT" },
 ];
 
@@ -72,14 +70,14 @@ export default function Header() {
         }`}
       >
         <div className="px-6 lg:px-12">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-32">
             <Link href="/" className="flex-shrink-0">
               <Image
                 src="/logo.png"
                 alt="dkInc."
-                width={160}
-                height={40}
-                className={`h-9 w-auto transition-all duration-500 ${
+                width={256}
+                height={64}
+                className={`h-14 w-auto transition-all duration-500 ${
                   isDark ? "brightness-0 invert" : ""
                 }`}
                 priority
@@ -87,13 +85,13 @@ export default function Header() {
             </Link>
 
             {/* Desktop nav links */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-11">
               {headerNavLinks.map((link) => (
                 link.href === "/contact" ? (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-xs font-semibold tracking-[0.15em] px-4 py-2 border transition-all duration-300 ${
+                    className={`text-base font-semibold tracking-[0.15em] px-6 py-3 border transition-all duration-300 ${
                       isDark
                         ? "border-white/40 text-white hover:bg-white hover:text-[#0d0d0d]"
                         : "border-[#0d0d0d]/30 text-[#0d0d0d] hover:border-[#0d0d0d] hover:bg-[#0d0d0d] hover:text-white"
@@ -105,7 +103,7 @@ export default function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-xs font-medium tracking-[0.15em] transition-colors duration-300 relative group ${
+                    className={`text-base font-medium tracking-[0.15em] transition-colors duration-300 relative group ${
                       isDark ? "text-white/70 hover:text-white" : "text-[#0d0d0d]/60 hover:text-[#0d0d0d]"
                     } ${pathname === link.href ? (isDark ? "text-white" : "text-[#0d0d0d]") : ""}`}
                   >

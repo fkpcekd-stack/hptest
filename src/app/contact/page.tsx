@@ -70,7 +70,7 @@ export default function ContactPage() {
   const inputClass = (hasError: boolean) => (hasError ? inputError : inputNormal);
 
   return (
-    <>
+    <div className="contact-page">
       {/* Page Header */}
       <section className="pt-36 pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -115,7 +115,7 @@ export default function ContactPage() {
                   </p>
                   <button
                     onClick={() => setSubmitStatus("idle")}
-                    className="px-6 py-3 bg-[#1B2B5E] text-white text-sm font-semibold rounded-lg hover:bg-[#2563EB] transition-colors"
+                    className="px-6 py-3 bg-[#4AB8D8] text-white text-sm font-semibold rounded-lg hover:bg-[#3AA3C0] transition-colors"
                   >
                     新しいお問い合わせ
                   </button>
@@ -245,7 +245,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={submitStatus === "loading"}
-                    className="w-full py-4 bg-[#1B2B5E] text-white text-sm font-semibold rounded-lg hover:bg-[#2563EB] transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="w-full py-4 bg-[#4AB8D8] text-white text-sm font-semibold rounded-lg hover:bg-[#3AA3C0] transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     {submitStatus === "loading" ? (
                       <>
@@ -280,6 +280,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

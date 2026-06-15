@@ -930,7 +930,7 @@ export default function ServiceSection({ services }: { services: Service[] }) {
         const isEven = i % 2 === 1;
         return (
           <React.Fragment key={service.id}>
-            {i > 0 && <SectionDivider size="compact" />}
+            {i > 0 && <SectionDivider size="compact" index={i - 1} />}
           <div
             ref={(el) => { itemRefs.current[i] = el; }}
             data-delay={String(i * 80)}
@@ -941,7 +941,7 @@ export default function ServiceSection({ services }: { services: Service[] }) {
                 <p className="text-[#4AB8D8] text-xs tracking-[0.3em] font-mono mb-6">
                   SERVICE {String(i + 1).padStart(2, "0")}
                 </p>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#4AB8D8] mb-5 tracking-tight">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-5 tracking-tight">
                   {service.title}
                 </h3>
                 <p className="text-black/45 text-sm leading-relaxed max-w-md mb-8">{service.description}</p>
@@ -970,7 +970,7 @@ export default function ServiceSection({ services }: { services: Service[] }) {
         );
       })}
 
-      <SectionDivider size="compact" />
+      <SectionDivider size="compact" index={services.length - 1} />
     </section>
   );
 }

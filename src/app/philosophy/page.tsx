@@ -46,7 +46,7 @@ export default function PhilosophyPage() {
           <p
             data-reveal="up"
             data-delay="0"
-            className="text-[#4AB8D8] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-[0.05em] leading-none"
+            className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-[0.05em] leading-none"
           >
             Mission Vision Value
           </p>
@@ -102,7 +102,7 @@ export default function PhilosophyPage() {
               >
                 Vision
               </p>
-              <h2 className="text-4xl sm:text-5xl font-bold leading-[1.15] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight whitespace-nowrap">
                 <RevealChars lines={["成果を", "すべての判断基準に。"]} delay={80} charDelay={50} />
               </h2>
             </div>

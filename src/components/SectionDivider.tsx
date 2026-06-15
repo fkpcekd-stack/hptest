@@ -5,9 +5,11 @@ type DividerVariant = "line" | "triangle";
 
 type Props = {
   size?: "default" | "compact";
+  index?: number;
 };
 
-export default function SectionDivider({ size = "default" }: Props) {
+export default function SectionDivider({ size = "default", index = 0 }: Props) {
+  const direction = index % 2 === 0 ? "ltr" : "rtl";
   const ref = useRef<HTMLDivElement>(null);
   const [variant, setVariant] = useState<DividerVariant>("line");
 
@@ -50,18 +52,21 @@ export default function SectionDivider({ size = "default" }: Props) {
     <div className={`section-divider px-6 lg:px-12 ${padding}`} aria-hidden="true">
       <div ref={ref} className="max-w-screen-xl mx-auto">
         {variant === "triangle" ? (
-          <div className="section-divider-triangle-wrap w-full h-3 sm:h-4">
+          <div className={`section-divider-triangle-wrap section-divider-triangle-wrap--${direction} w-full h-3 sm:h-4`}>
             <svg
               className="w-full h-full block"
               viewBox="0 0 100 6"
               preserveAspectRatio="none"
               aria-hidden="true"
             >
-              <polygon points="0,0 0,6 100,3" fill="#4AB8D8" />
+              <polygon
+                points={direction === "ltr" ? "0,0 0,6 100,3" : "100,0 100,6 0,3"}
+                fill="#4AB8D8"
+              />
             </svg>
           </div>
         ) : (
-          <span className="section-divider-line block h-px bg-[#4AB8D8]" />
+          <span className={`section-divider-line section-divider-line--${direction} block h-px bg-[#4AB8D8]`} />
         )}
       </div>
     </div>

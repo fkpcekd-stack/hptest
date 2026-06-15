@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import CTASection from "@/components/CTASection";
-import RevealChars from "@/components/RevealChars";
+import SectionDivider from "@/components/SectionDivider";
 
 export const metadata: Metadata = {
   title: "会社概要",
@@ -19,12 +19,16 @@ const companyInfo = [
   { label: "役員", value: "代表取締役　古賀大資" },
 ];
 
+const MAP_QUERY = encodeURIComponent("熊本県熊本市南区平成2丁目5番11号 DKビル");
+const MAP_EMBED_SRC = `https://www.google.com/maps?q=${MAP_QUERY}&output=embed`;
+const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${MAP_QUERY}`;
+
 
 export default function AboutPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="pt-40 pb-20 bg-white hero-clip">
+      <section className="pt-40 bg-white hero-clip">
         <div className="px-6 lg:px-12">
           <p
             data-reveal="up"
@@ -34,26 +38,15 @@ export default function AboutPage() {
             About Us
           </p>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d0d0d] mb-8 leading-none tracking-tight">
-            <RevealChars lines={["会社概要"]} delay={120} charDelay={60} />
+            会社概要
           </h1>
         </div>
       </section>
 
       {/* Company Info — main */}
-      <section className="about-page-content bg-white py-24">
+      <section className="about-page-content bg-white pb-24">
         <div className="px-6 lg:px-12 max-w-3xl mx-auto">
-          <div className="border-b border-black/8 pb-8 mb-0">
-            <div data-reveal="up" data-delay="0">
-              <p className="text-[#4AB8D8] text-xs tracking-[0.3em] uppercase mb-3">
-                Company Info
-              </p>
-              <h2 className="text-4xl sm:text-5xl font-bold text-[#0d0d0d] tracking-tight">
-                <RevealChars lines={["会社情報"]} delay={80} charDelay={50} />
-              </h2>
-            </div>
-          </div>
-
-          <dl data-reveal="up" data-delay="80">
+          <dl data-reveal="up" data-delay="0" className="border-t border-black/8">
             {companyInfo.map((item) => (
               <div
                 key={item.label}
@@ -75,6 +68,49 @@ export default function AboutPage() {
               </div>
             ))}
           </dl>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* Access — map */}
+      <section className="about-page-content bg-white pb-24">
+        <div className="px-6 lg:px-12 max-w-5xl mx-auto">
+          <div className="mb-10" data-reveal="up" data-delay="0">
+            <p className="text-[#4AB8D8] text-xs tracking-[0.3em] uppercase mb-3">
+              Access
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0d0d0d] tracking-tight">
+              アクセス
+            </h2>
+          </div>
+          <div
+            data-reveal="up"
+            data-delay="80"
+            className="relative w-full aspect-[16/9] overflow-hidden border border-black/8"
+          >
+            <iframe
+              src={MAP_EMBED_SRC}
+              title="株式会社ディーケー 地図"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+          <div className="mt-4 text-right">
+            <a
+              href={MAP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs text-black/45 hover:text-[#0d0d0d] transition-colors duration-200"
+            >
+              Google マップで開く
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
 

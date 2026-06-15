@@ -36,9 +36,9 @@ export default function IntroAnimation() {
         <Image
           src="/logo.png"
           alt="dkInc."
-          width={160}
-          height={40}
-          className="h-10 w-auto brightness-0 invert"
+          width={256}
+          height={64}
+          className="h-16 w-auto brightness-0 invert"
         />
       </div>
     </div>
