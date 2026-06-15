@@ -1,7 +1,8 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
+  const [enabled, setEnabled] = useState(false);
   const dotRef  = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
   const hoveredRef = useRef(false);
@@ -9,6 +10,7 @@ export default function CustomCursor() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (window.matchMedia("(pointer: coarse)").matches) return;
+    setEnabled(true);
 
     const onMove = (e: MouseEvent) => {
       if (dotRef.current) {
@@ -44,6 +46,8 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", onMove);
     };
   }, []);
+
+  if (!enabled) return null;
 
   return (
     <div

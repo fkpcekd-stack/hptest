@@ -121,7 +121,7 @@ export default async function HomePage() {
                 data-delay="80"
                 className="text-[clamp(2rem,6vw,6rem)] font-bold leading-[1.05] tracking-tight whitespace-nowrap"
               >
-                成果を
+                <span className="text-[#4AB8D8]">成果を</span>
                 <br />
                 すべての判断基準に。
               </h2>

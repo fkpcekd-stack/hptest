@@ -70,14 +70,14 @@ export default function Header() {
         }`}
       >
         <div className="px-6 lg:px-12">
-          <div className="flex items-center justify-between h-28">
+          <div className="flex items-center justify-between h-20 sm:h-28">
             <Link href="/" className="flex-shrink-0">
               <Image
                 src="/logo.png"
                 alt="dkInc."
                 width={256}
                 height={64}
-                className={`h-16 w-auto transition-all duration-500 ${
+                className={`h-10 sm:h-16 w-auto transition-all duration-500 ${
                   isDark ? "brightness-0 invert" : ""
                 }`}
                 priority
