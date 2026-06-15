@@ -8,7 +8,6 @@ import Footer from "@/components/Footer";
 import ScrollRevealInit from "@/components/ScrollRevealInit";
 import CustomCursor from "@/components/CustomCursor";
 import IntroAnimation from "@/components/IntroAnimation";
-import DividerSwitcher from "@/components/DividerSwitcher";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -74,7 +73,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Footer />
         <CustomCursor />
         <IntroAnimation />
-        <DividerSwitcher />
       </body>
     </html>
   );

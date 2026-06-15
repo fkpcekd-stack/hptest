@@ -61,7 +61,7 @@ const illustrationsA = [
     ))}
   </svg>,
 
-  /* A03 代理事業 — 2つの有機クラスターが繋がる */
+  /* A03 広告代理事業 — 2つの有機クラスターが繋がる */
   <svg key="a3" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     {/* Left cluster */}
     <circle cx="105" cy="148" r="65" fill={C} fillOpacity="0.04"/>
@@ -219,7 +219,7 @@ const illustrationsB = [
     <line x1="372" y1="272" x2="372" y2="256" stroke={A} strokeOpacity="0.35" strokeWidth="0.75"/>
   </svg>,
 
-  /* B03 代理事業 — 2人の人物 */
+  /* B03 広告代理事業 — 2人の人物 */
   <svg key="b3" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     {/* Left figure */}
     <circle cx="108" cy="88"  r="22" stroke={C} strokeOpacity="0.35" strokeWidth="0.75" fill="none"/>
@@ -399,7 +399,7 @@ const illustrationsC = [
     <line x1="372" y1="272" x2="372" y2="238" stroke={A} strokeOpacity="0.5" strokeWidth="2.5"/>
   </svg>,
 
-  /* C03 代理事業 — メディアとクライアントをつなぎマーケティング施策を打つ */
+  /* C03 広告代理事業 — メディアとクライアントをつなぎマーケティング施策を打つ */
   <svg key="c3" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     {/* Media block (left) */}
     <rect x="28" y="88" width="112" height="124" rx="4" fill={C} fillOpacity="0.08" stroke={C} strokeOpacity="0.45" strokeWidth="2.5"/>
@@ -590,7 +590,7 @@ const illustrationsD = [
     );})}
   </svg>,
 
-  /* D03 代理事業 — Neural Synapse（左右の脳葉が中心で繋がる） */
+  /* D03 広告代理事業 — Neural Synapse（左右の脳葉が中心で繋がる） */
   <svg key="d3" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     {/* Brain mesh */}
     {BPTS.map(([x,y],i) => { const [nx,ny]=BPTS[(i+1)%12]; return (
@@ -751,7 +751,7 @@ const illustrationsE = [
     </g>
   </svg>,
 
-  /* E03 代理事業 — 2人の人物が向き合う */
+  /* E03 広告代理事業 — 2人の人物が向き合う */
   <svg key="e3" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <g>
       {/* Left figure */}

@@ -20,7 +20,7 @@ const fallbackServices = [
   },
   {
     id: "3",
-    title: "代理事業",
+    title: "広告代理事業",
     description:
       "広告主とメディアの架け橋となり、集客・認知拡大・成果獲得まで、目的に合わせた広告運用を支援します。",
   },
