@@ -917,7 +917,7 @@ export default function ServiceSection({ services }: { services: Service[] }) {
       <div
         ref={(el) => { itemRefs.current[services.length] = el; }}
         data-delay="0"
-        className="px-6 lg:px-12 py-16 sm:py-20 lg:py-24"
+        className="px-6 lg:px-12 pt-24 pb-12 sm:py-20 lg:py-24"
         style={{ opacity: 0, transform: "translateY(24px)", transition: "opacity 0.7s ease, transform 0.7s ease" }}
       >
         <div className="border-b border-black/8 pb-8">
