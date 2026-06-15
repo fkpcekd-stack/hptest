@@ -49,7 +49,7 @@ export default async function HomePage() {
       {/* HERO */}
       <section className="relative lg:min-h-screen bg-white overflow-hidden grid grid-cols-1 lg:grid-cols-2 hero-clip">
         {/* Left: text */}
-        <div className="relative z-10 flex flex-col justify-start lg:justify-end pt-36 sm:pt-40 pb-4 sm:pb-6 lg:pt-44 lg:pb-24 px-6 lg:px-12">
+        <div className="relative z-10 flex flex-col justify-start lg:justify-end pt-32 sm:pt-36 pb-4 sm:pb-6 lg:pt-40 lg:pb-12 px-6 lg:px-12">
           <p className="hero-animate text-[#4AB8D8] text-xs font-medium tracking-[0.3em] uppercase mb-4 sm:mb-8" style={{ animationDelay: "0ms" }}>
             Digital Marketing
           </p>
@@ -101,7 +101,7 @@ export default async function HomePage() {
       <SectionDivider index={0} />
 
       {/* VISION */}
-      <section className="vision-section bg-[#4AB8D8] text-white py-24 sm:py-32 lg:py-40 overflow-hidden relative">
+      <section className="vision-section bg-[#4AB8D8] text-white py-20 sm:py-28 lg:py-32 overflow-hidden relative">
         <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{
           backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
           backgroundSize: "32px 32px",
