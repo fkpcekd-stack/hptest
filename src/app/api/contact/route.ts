@@ -37,6 +37,9 @@ export async function POST(request: NextRequest) {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      connectionTimeout: 8000, // 8s で接続失敗を返す
+      greetingTimeout: 8000,
+      socketTimeout: 8000,
     });
 
     const emailTo = process.env.CONTACT_EMAIL_TO || "info@dk311.jp";
