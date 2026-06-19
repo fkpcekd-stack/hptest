@@ -15,6 +15,17 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return {
+      beforeFiles: [],
+      afterFiles: [],
+      fallback: [
+        // /career-agent 配下の SPA フォールバック (存在しないパスを index.html へ)
+        { source: "/career-agent", destination: "/career-agent/index.html" },
+        { source: "/career-agent/:path*", destination: "/career-agent/index.html" },
+      ],
+    };
+  },
 };
 
 export default nextConfig;
