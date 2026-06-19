@@ -28,10 +28,11 @@ export async function POST(request: NextRequest) {
     const { company, name, email, phone, message } = validated.data;
 
     // Create transporter
+    const port = parseInt(process.env.SMTP_PORT || "465");
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || "smtp.gmail.com",
-      port: parseInt(process.env.SMTP_PORT || "587"),
-      secure: false,
+      host: process.env.SMTP_HOST || "smtp.lolipop.jp",
+      port,
+      secure: port === 465, // 465 → SSL/TLS、587 → STARTTLS
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
